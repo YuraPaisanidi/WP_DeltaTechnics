@@ -19,7 +19,13 @@ get_header();
 
 <div class="custom__container container">
 	<article class="custom__article">
-		<h5 class="custom__article_title">
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<h1 class="h1"></h1>
+			<?php the_content(); ?>
+		<?php endwhile; ?>
+		<?php endif; ?>
+
+		<!-- <h5 class="custom__article_title">
 			Придание индивидуального<br> вида базовым винтовкам
 		</h5>
 		<p>
@@ -79,7 +85,7 @@ get_header();
 			ut mattis diam. Imperdiet lacinia commodo in lorem convallis turpis neque, consequat.
 			Dui turpis tortor egestas sed blandit velit et, consequat. Urna interdum amet, cursus
 			feugiat fusce sed vulputate.
-		</p>
+		</p> -->
 	</article>
 
 	<div class="custom__bottom ">

@@ -1,21 +1,16 @@
 <div class="side-menu">
 	<div class="side-menu__item">
-		<a href="#">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/rifle-icon.svg" alt="">
-		</a>
-	</div>
-	<div class="side-menu__item">
-		<a href="#">
+		<a href="<?php the_field('sidebar_url_1', 'option'); ?>" target="_blank">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery-icon.svg" alt="">
 		</a>
 	</div>
 	<div class="side-menu__item">
-		<a href="#">
+		<a href="<?php the_field('sidebar_url_2', 'option'); ?>" target="_blank">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pin-icon.svg" alt="">
 		</a>
 	</div>
 	<div class="side-menu__item">
-		<a href="#">
+		<a href="<?php the_field('sidebar_url_3', 'option'); ?>" target="_blank">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb-icon.svg" alt="">
 		</a>
 	</div>
@@ -30,7 +25,15 @@
 
 		<nav class="header__nav">
 
-			<div class="header__nav_menu">
+			<?php 
+				wp_nav_menu( array(
+					'menu'=>'menu',
+					'menu_class'=>'header__nav_menu',
+					'theme_location'=>'menu',
+					) );
+					?>
+
+			<!-- <div class="header__nav_menu">
 				<ul>
 					<li>
 						<a href="#" class="header__nav_title">Зброя</a>
@@ -87,7 +90,7 @@
 						</ul>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 
 			<div class="header__nav_accord">
 
@@ -216,22 +219,17 @@
 
 			<div class="side-menu__mobile">
 				<div class="side-menu__item">
-					<a href="#">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/rifle-icon.svg" alt="">
-					</a>
-				</div>
-				<div class="side-menu__item">
-					<a href="#">
+					<a href="<?php the_field('sidebar_url_1', 'option'); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery-icon.svg" alt="">
 					</a>
 				</div>
 				<div class="side-menu__item">
-					<a href="#">
+					<a href="<?php the_field('sidebar_url_2', 'option'); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pin-icon.svg" alt="">
 					</a>
 				</div>
 				<div class="side-menu__item">
-					<a href="#">
+					<a href="<?php the_field('sidebar_url_3', 'option'); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb-icon.svg" alt="">
 					</a>
 				</div>
@@ -259,9 +257,13 @@
 				</a>
 			</div>
 
-			<div class="header__btns_item modal__auth">
+			<div class="header__btns_item header__btns_item--auth">
 				<a href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg" alt="">
+					<ul>
+						<li><a href="#" class="modal__auth">Войти</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/registracija/">Регистрация</a></li>
+					</ul>
 				</a>
 			</div>
 

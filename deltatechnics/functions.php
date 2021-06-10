@@ -89,18 +89,18 @@
     }
 
 //------------------Register Custom Post портфолио----------------------
-    function catalogue_post_type() {
+    function media_post_type() {
 
         $labels = array(
-            'name'                  => _x( 'Каталог', 'Post Type General Name', 'text_domain' ),
-            'singular_name'         => _x( 'Каталог', 'Post Type Singular Name', 'text_domain' ),
-            'menu_name'             => __( 'Каталог', 'text_domain' ),
-            'all_items'             => __( 'Каталог', 'text_domain' ),
-            'add_new_item'          => __( 'Добавить посты', 'text_domain' ),
-            'add_new'               => __( 'Добавить пост', 'text_domain' ),
+            'name'                  => _x( 'Медиа центр', 'Post Type General Name', 'text_domain' ),
+            'singular_name'         => _x( 'Медиа центр', 'Post Type Singular Name', 'text_domain' ),
+            'menu_name'             => __( 'Медиа центр', 'text_domain' ),
+            'all_items'             => __( 'Медиа центр', 'text_domain' ),
+            'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
+            'add_new'               => __( 'Добавить статью', 'text_domain' ),
         );
         $args = array(
-            'label'                 => __( 'Каталог', 'text_domain' ),
+            'label'                 => __( 'Медиа центр', 'text_domain' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
             'hierarchical'          => false,
@@ -117,48 +117,48 @@
             'publicly_queryable'    => true,
             'capability_type'       => 'page',
         );
-        register_post_type( 'catalogue', $args );
+        register_post_type( 'media', $args );
 
     }
-    add_action( 'init', 'catalogue_post_type', 0 );
+    add_action( 'init', 'media_post_type', 0 );
 
-    register_taxonomy("catalogue-cat", array("catalogue"), array("hierarchical" => true, "label" => "Категории каталога", "singular_label" => "activity item", "rewrite" => true));
+    register_taxonomy("media-cat", array("media"), array("hierarchical" => true, "label" => "Категории медиа", "singular_label" => "activity item", "rewrite" => true));
 
 	//------------------Register Custom Post портфолио----------------------
-		function project_post_type() {
+		// function project_post_type() {
 
-			$labels = array(
-					'name'                  => _x( 'Проекты', 'Post Type General Name', 'text_domain' ),
-					'singular_name'         => _x( 'Проект', 'Post Type Singular Name', 'text_domain' ),
-					'menu_name'             => __( 'Проекты', 'text_domain' ),
-					'all_items'             => __( 'Проект', 'text_domain' ),
-					'add_new_item'          => __( 'Добавить проект', 'text_domain' ),
-					'add_new'               => __( 'Добавить проекты', 'text_domain' ),
-			);
-			$args = array(
-					'label'                 => __( 'Проекты', 'text_domain' ),
-					'labels'                => $labels,
-					'supports'              => array( 'title', 'thumbnail'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-					'hierarchical'          => false,
-					'public'                => true,
-					'show_ui'               => true,
-					'show_in_menu'          => true,
-					'menu_position'         => 4,
-					'menu_icon'             => 'dashicons-images-alt2',
-					'show_in_admin_bar'     => true,
-					'show_in_nav_menus'     => true,
-					'can_export'            => true,
-					'has_archive'           => true,
-					'exclude_from_search'   => false,
-					'publicly_queryable'    => true,
-					'capability_type'       => 'page',
-			);
-			register_post_type( 'project', $args );
+		// 	$labels = array(
+		// 			'name'                  => _x( 'Проекты', 'Post Type General Name', 'text_domain' ),
+		// 			'singular_name'         => _x( 'Проект', 'Post Type Singular Name', 'text_domain' ),
+		// 			'menu_name'             => __( 'Проекты', 'text_domain' ),
+		// 			'all_items'             => __( 'Проект', 'text_domain' ),
+		// 			'add_new_item'          => __( 'Добавить проект', 'text_domain' ),
+		// 			'add_new'               => __( 'Добавить проекты', 'text_domain' ),
+		// 	);
+		// 	$args = array(
+		// 			'label'                 => __( 'Проекты', 'text_domain' ),
+		// 			'labels'                => $labels,
+		// 			'supports'              => array( 'title', 'thumbnail'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		// 			'hierarchical'          => false,
+		// 			'public'                => true,
+		// 			'show_ui'               => true,
+		// 			'show_in_menu'          => true,
+		// 			'menu_position'         => 4,
+		// 			'menu_icon'             => 'dashicons-images-alt2',
+		// 			'show_in_admin_bar'     => true,
+		// 			'show_in_nav_menus'     => true,
+		// 			'can_export'            => true,
+		// 			'has_archive'           => true,
+		// 			'exclude_from_search'   => false,
+		// 			'publicly_queryable'    => true,
+		// 			'capability_type'       => 'page',
+		// 	);
+		// 	register_post_type( 'project', $args );
 
-		}
-		add_action( 'init', 'project_post_type', 0 );
+		// }
+		// add_action( 'init', 'project_post_type', 0 );
 
-		register_taxonomy("project-cat", array("project"), array("hierarchical" => true, "label" => "Категории проектов", "singular_label" => "activity item", "rewrite" => true));
+		// register_taxonomy("project-cat", array("project"), array("hierarchical" => true, "label" => "Категории проектов", "singular_label" => "activity item", "rewrite" => true));
 
 
 //------------------виджет---------------------
