@@ -33,65 +33,6 @@
 					) );
 					?>
 
-			<!-- <div class="header__nav_menu">
-				<ul>
-					<li>
-						<a href="#" class="header__nav_title">Зброя</a>
-						<ul>
-							<li><a href="#">Зброя 1</a></li>
-							<li><a href="#">Зброя 2</a></li>
-							<li><a href="#">Зброя 3</a></li>
-							<li><a href="#">Зброя 4</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" class="header__nav_title">Кастом</a>
-						<ul>
-							<li><a href="#">Кастом 1</a></li>
-							<li><a href="#">Кастом 2</a></li>
-							<li><a href="#">Кастом 3</a></li>
-							<li><a href="#">Кастом 4</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" class="header__nav_title">Релоад</a>
-						<ul>
-							<li><a href="#">Релоад 1</a></li>
-							<li><a href="#">Релоад 2</a></li>
-							<li><a href="#">Релоад 3</a></li>
-							<li><a href="#">Релоад 4</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" class="header__nav_title">Комплектуючі</a>
-						<ul>
-							<li><a href="#">Комплектуючі 1</a></li>
-							<li><a href="#">Комплектуючі 2</a></li>
-							<li><a href="#">Комплектуючі 3</a></li>
-							<li><a href="#">Комплектуючі 4</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" class="header__nav_title">Одяг</a>
-						<ul>
-							<li><a href="#">Одяг 1</a></li>
-							<li><a href="#">Одяг 2</a></li>
-							<li><a href="#">Одяг 3</a></li>
-							<li><a href="#">Одяг 4</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" class="header__nav_title">Спорядження</a>
-						<ul>
-							<li><a href="#">Спорядження 1</a></li>
-							<li><a href="#">Спорядження 2</a></li>
-							<li><a href="#">Спорядження 3</a></li>
-							<li><a href="#">Спорядження 4</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div> -->
-
 			<div class="header__nav_accord">
 
 				<div class="accordion">
@@ -251,7 +192,7 @@
 			</div>
 
 			<div class="header__btns_item--cart">
-				<a href="#">
+				<a href="<?php echo get_home_url(); ?>/korzina/">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg" alt="">
 					<span>0</span>
 				</a>

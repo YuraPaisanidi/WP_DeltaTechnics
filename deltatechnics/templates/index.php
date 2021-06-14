@@ -6,7 +6,7 @@ get_header();
 <main class="home main">
 
 	<video class="video" loop autoplay muted>
-		<source src="<?php echo get_template_directory_uri(); ?>/assets/img/sf_video.mp4" type="video/mp4">
+		<source src="<?php the_field('video', 'option'); ?>" type="video/mp4">
 	</video>
 
 	<?php if( have_rows('menu_cards') ): ?>
