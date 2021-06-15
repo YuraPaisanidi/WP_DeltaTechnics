@@ -3805,15 +3805,16 @@
 
 		&_title
 			font-family: $title
-			font-size: 36px
+			font-size: 32px
 			text-align: center
 			margin-bottom: 35px
+			color: $text
 
 			+r(1200)
-				font-size: 32px
+				font-size: 28px
 
 			+r(768)
-				font-size: 28px
+				font-size: 26px
 				margin-bottom: 25px
 
 			+r(480)
@@ -3822,6 +3823,7 @@
 
 		p
 			margin-bottom: 30px
+			width: 100%
 
 			+r(480)
 				margin-bottom: 15px
@@ -3830,16 +3832,13 @@
 			&:last-child
 				margin-bottom: 0
 
-		&_img
+		img
+			object-fit: cover
+			height: auto
 			width: 100%
-			margin-bottom: 30px
+			border-radius: 5px
 
-			img
-				object-fit: cover
-				width: 100%
-				border-radius: 5px
-
-	&__soc
+	.social-links
 		margin-bottom: 70px
 
 		+r(992)
@@ -3872,6 +3871,17 @@
 		&_wrap
 			+r(992)
 				width: 100%
+
+	video
+		height: auto
+		width: 100%
+
+	.wp-video
+		width: 100% !important
+		margin-bottom: 30px
+
+		+r(576)
+			margin-bottom: 15px
 
 //-----------------ABOUT-----------------------
 .about
