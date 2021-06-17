@@ -25,13 +25,7 @@ get_header();
 					width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
 				</iframe>
 			</div>
-			<form action="#" class="contacts__form contact-form">
-				<p class="contact-form__title upgrade__form_title">Ваши пожелания</p>
-				<input class="contact-form__name" type="text" name="name" placeholder="Ваше имя" required>
-				<input class="contact-form__email" type="email" name="email" placeholder="Ваш email" required>
-				<textarea name="message" placeholder="Сообщение" required></textarea>
-				<a href="#" class="contact-form__btn">Отправить</a>
-			</form>
+			<?php echo do_shortcode( '[contact-form-7 id="34" title="Напишите нам"]' ); ?>
 		</div>
 
 		<div class="contacts__bottom">

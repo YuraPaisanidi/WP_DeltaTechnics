@@ -28,7 +28,7 @@
 //------------------delet Post Type ----------------------
 	function remove_menus(){
 	  // remove_menu_page( 'index.php' );                  //Консоль
-	  remove_menu_page( 'edit.php' );                   //Записи
+	  // remove_menu_page( 'edit.php' );                   //Записи
 	  // remove_menu_page( 'upload.php' );                 //Медиафайлы
 	  // remove_menu_page( 'edit.php?post_type=page' );    //Страницы
 	  remove_menu_page( 'edit-comments.php' );          //Комментарии
@@ -222,9 +222,9 @@
         $previous = intval($page) - 1;
 
 
-        $previous = esc_attr( get_pagenum_link($previous) );
-            if ( $previous && (1 != $page) )
-            $echo .= '<a href="' . $previous . '" title="' . __( '', 'text-domain') . '">' . $args['previous_string'] . '</a>';
+        // $previous = esc_attr( get_pagenum_link($previous) );
+        //     if ( $previous && (1 != $page) )
+        //     $echo .= '<a href="' . $previous . '" title="' . __( '', 'text-domain') . '">' . $args['previous_string'] . '</a>';
         
         if ( !empty($min) && !empty($max) ) {
             for( $i = $min; $i <= $max; $i++ ) {
@@ -236,10 +236,10 @@
             }
         }
         
-        $next = intval($page) + 1;
-        $next = esc_attr( get_pagenum_link($next) );
-        if ($next && ($count != $page) )
-            $echo .= '<a href="' . $next . '" title="' . __( '', 'text-domain') . '">' . $args['next_string'] . '</a>';
+        // $next = intval($page) + 1;
+        // $next = esc_attr( get_pagenum_link($next) );
+        // if ($next && ($count != $page) )
+        //     $echo .= '<a href="' . $next . '" title="' . __( '', 'text-domain') . '">' . $args['next_string'] . '</a>';
         
         if ( isset($echo) )
             echo $args['before_output'] . $echo . $args['after_output'];

@@ -35,7 +35,7 @@ get_header();
 					<p>Пароль</p>
 				</div>
 				<div class="registr__form_inputs--pass">
-					<input type="password" name="password" placeholder="Введите старый пароль">
+					<input type="password" name="password" placeholder="Введите пароль">
 					<input type="password" name="password" placeholder="Введите пароль еще раз">
 				</div>
 			</div>

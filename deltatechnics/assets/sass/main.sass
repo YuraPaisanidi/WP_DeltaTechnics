@@ -13,7 +13,6 @@
 	font-size: 48px
 	font-weight: 400
 	font-family: $title
-	color: $accent
 
 .h3, h3
 	font-size: 28px
@@ -703,6 +702,7 @@
 .menu
 	display: grid
 	grid-template-columns: 1fr 1fr
+	margin-top: -5px
 
 	+r(576)
 		grid-template-columns: 1fr
@@ -1088,7 +1088,11 @@
 			background-color: $dark
 			color: $accent
 //------------------------CONTACT-FORM--------------	
-.contact-form
+.wpcf7
+	+r(992)
+		width: 100%
+
+.contact-form,.wpcf7-form
 	display: flex
 	flex-direction: column
 	max-width: 350px
@@ -1096,27 +1100,62 @@
 	border-radius: 10px
 	background-color: $accent
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-	padding: 30px 20px 20px 20px
+	padding: 20px
 	gap: 15px
 	max-height: 445px
+	position: relative
+
+	+r(992)
+		max-width: 100%
+
+	+r(576)
+		padding-top: 20px
+
+	textarea
+		+r(480)
+			height: 100px
 
 	&__title
 		font-size: 24px
 		font-family: $title
 		padding-left: 10px
 
-	input,
-	textarea
+	&__email,
+	&__name,
+	&__textarea
 		border: 1px solid #E4E8F1
 		border-radius: 6px
 		height: 35px
 		opacity: 0.5
 		padding-left: 10px
+		width: 100%
 
-	textarea
+	&__textarea
 		resize: none
 		padding-top: 5px
 		height: 200px
+
+	.wpcf7-form-control-wrap
+		display: block
+		position: relative
+
+	.wpcf7-not-valid-tip
+		position: absolute
+		font-size: 10px
+		padding-left: 5px
+
+	.wpcf7-response-output
+		// position: absolute
+		top: 101%
+		right: 0
+		left: 0
+		width: 100%
+		margin: 0 !important
+		font-size: 11px
+		border-radius: 6px
+
+	.ajax-loader
+		display: none
 
 	&__btn
 		width: 100%
@@ -1127,6 +1166,7 @@
 		display: flex
 		align-items: center
 		justify-content: center
+		border: none
 
 		&:hover
 			background-color: $dark
@@ -2009,15 +2049,16 @@
 				+r(480)
 					align-items: center
 
-				
-				p 
+				p
 					font-weight: 600
 
 					+r(768)
 						font-size: 14px
 
+					+r(480)
+						text-align: center
 
-			a 
+			a
 				color: $text
 				font-weight: 600
 
@@ -3575,6 +3616,7 @@
 		padding-bottom: 40px
 		border-bottom: 1px solid #C6C6D2
 		align-items: center
+		width: 100%
 
 		+r(992)
 			max-width: 600px
@@ -3645,6 +3687,7 @@
 			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 			border-radius: 10px
 			overflow: hidden
+			min-height: 315px
 
 			+r(576)
 				max-width: 100%
@@ -3838,6 +3881,20 @@
 			width: 100%
 			border-radius: 5px
 
+			ul,ol
+				padding-left: 30px
+				margin-bottom: 20px
+
+			ul
+				list-style-type: disc
+
+			blockquote
+				padding: 0 45px
+				margin: 15px 0
+
+				+r(480)
+					padding: 0 25px
+
 	.social-links
 		margin-bottom: 70px
 
@@ -3923,6 +3980,9 @@
 			+r(480)
 				font-size: 14px
 
+		p
+			width: 100%
+
 	&__bio
 		+between
 		flex-wrap: nowrap
@@ -3940,6 +4000,9 @@
 			padding: 20px 30px
 			gap: 20px
 
+		+r(480)
+			text-align: centers
+
 		&_img
 			max-width: 255px
 			width: 100%	
@@ -3949,6 +4012,7 @@
 
 			+r(768)
 				max-width: 200px
+				max-height: 250px
 
 			img
 				object-fit: cover
@@ -4006,6 +4070,21 @@
 			border-bottom: none
 			padding-bottom: 0
 			margin-bottom: 30px
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr 1fr
+			grid-gap: 30px
+
+			+r(992)
+				grid-template-columns: 1fr 1fr
+
+			+r(576)
+				grid-gap: 20px
+
+			+r(480)
+				grid-template-columns: 1fr
+
+	.top-bg__title
+		width: 100%	
 
 //----------------PRIVACY POLICY---------------
 .policy
