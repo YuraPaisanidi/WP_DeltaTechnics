@@ -89,18 +89,18 @@
     }
 
 //------------------Register Custom Post медиа центр----------------------
-    function media_post_type() {
+    function lit_post_type() {
 
         $labels = array(
-            'name'                  => _x( 'Медиа центр', 'Post Type General Name', 'text_domain' ),
-            'singular_name'         => _x( 'Медиа центр', 'Post Type Singular Name', 'text_domain' ),
-            'menu_name'             => __( 'Медиа центр', 'text_domain' ),
-            'all_items'             => __( 'Медиа центр', 'text_domain' ),
+            'name'                  => _x( 'Полезная литература', 'Post Type General Name', 'text_domain' ),
+            'singular_name'         => _x( 'Полезная литература', 'Post Type Singular Name', 'text_domain' ),
+            'menu_name'             => __( 'Полезная литература', 'text_domain' ),
+            'all_items'             => __( 'Полезная литература', 'text_domain' ),
             'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
             'add_new'               => __( 'Добавить статью', 'text_domain' ),
         );
         $args = array(
-            'label'                 => __( 'Медиа центр', 'text_domain' ),
+            'label'                 => __( 'Полезная литература', 'text_domain' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
             'hierarchical'          => false,
@@ -117,49 +117,112 @@
             'publicly_queryable'    => true,
             'capability_type'       => 'page',
         );
-        register_post_type( 'media', $args );
+        register_post_type( 'lit', $args );
 
     }
-    add_action( 'init', 'media_post_type', 0 );
+    add_action( 'init', 'lit_post_type', 0 );
 
-    register_taxonomy("media-cat", array("media"), array("hierarchical" => true, "label" => "Категории медиа", "singular_label" => "activity item", "rewrite" => true));
+//------------------Register Custom Post медиа центр----------------------
+function art_post_type() {
 
-	//------------------Register Custom Post Одяг меню----------------------
-		function clothes_post_type() {
+	$labels = array(
+			'name'                  => _x( 'Полезные статьи', 'Post Type General Name', 'text_domain' ),
+			'singular_name'         => _x( 'Полезные статьи', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'             => __( 'Полезные статьи', 'text_domain' ),
+			'all_items'             => __( 'Полезные статьи', 'text_domain' ),
+			'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
+			'add_new'               => __( 'Добавить статью', 'text_domain' ),
+	);
+	$args = array(
+			'label'                 => __( 'Полезные статьи', 'text_domain' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 4,
+			'menu_icon'             => 'dashicons-images-alt2',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => true,
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'page',
+	);
+	register_post_type( 'art', $args );
 
-			$labels = array(
-					'name'                  => _x( 'Одяг', 'Post Type General Name', 'text_domain' ),
-					'singular_name'         => _x( 'Одяг', 'Post Type Singular Name', 'text_domain' ),
-					'menu_name'             => __( 'Одяг', 'text_domain' ),
-					'all_items'             => __( 'Одяг', 'text_domain' ),
-					'add_new_item'          => __( 'Добавить товар', 'text_domain' ),
-					'add_new'               => __( 'Добавить товары', 'text_domain' ),
-			);
-			$args = array(
-					'label'                 => __( 'Одяг', 'text_domain' ),
-					'labels'                => $labels,
-					'supports'              => array( 'title', 'thumbnail'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-					'hierarchical'          => false,
-					'public'                => true,
-					'show_ui'               => true,
-					'show_in_menu'          => true,
-					'menu_position'         => 4,
-					'menu_icon'             => 'dashicons-images-alt2',
-					'show_in_admin_bar'     => true,
-					'show_in_nav_menus'     => true,
-					'can_export'            => true,
-					'has_archive'           => true,
-					'exclude_from_search'   => false,
-					'publicly_queryable'    => true,
-					'capability_type'       => 'page',
-			);
-			register_post_type( 'clothes', $args );
+}
+add_action( 'init', 'art_post_type', 0 );
 
-		}
-		add_action( 'init', 'clothes_post_type', 0 );
+//------------------Register Custom Post медиа центр----------------------
+function rev_post_type() {
 
-		register_taxonomy("clothes-cat", array("clothes"), array("hierarchical" => true, "label" => "Категории одягу", "singular_label" => "activity item", "rewrite" => true));
+	$labels = array(
+			'name'                  => _x( 'Обзор новинок на рынке', 'Post Type General Name', 'text_domain' ),
+			'singular_name'         => _x( 'Обзор новинок на рынке', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'             => __( 'Обзор новинок на рынке', 'text_domain' ),
+			'all_items'             => __( 'Обзор новинок на рынке', 'text_domain' ),
+			'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
+			'add_new'               => __( 'Добавить статью', 'text_domain' ),
+	);
+	$args = array(
+			'label'                 => __( 'Обзор новинок на рынке', 'text_domain' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 4,
+			'menu_icon'             => 'dashicons-images-alt2',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => true,
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'page',
+	);
+	register_post_type( 'rev', $args );
 
+}
+add_action( 'init', 'rev_post_type', 0 );
+
+//------------------Register Custom Post медиа центр----------------------
+function video_post_type() {
+
+	$labels = array(
+			'name'                  => _x( 'Видео', 'Post Type General Name', 'text_domain' ),
+			'singular_name'         => _x( 'Видео', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'             => __( 'Видео', 'text_domain' ),
+			'all_items'             => __( 'Видео', 'text_domain' ),
+			'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
+			'add_new'               => __( 'Добавить статью', 'text_domain' ),
+	);
+	$args = array(
+			'label'                 => __( 'Видео', 'text_domain' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 4,
+			'menu_icon'             => 'dashicons-images-alt2',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => true,
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'page',
+	);
+	register_post_type( 'video', $args );
+
+}
+add_action( 'init', 'video_post_type', 0 );
 
 //------------------виджет---------------------
 	register_sidebar( array(
