@@ -8,7 +8,7 @@ get_header();
 	<div class="media-center__top top-bg">
 		<div class="container">
 			<div class="top-bg__title">
-				<h1 class="media-center__title h1">Медиа центр</h1>
+				<h1 class="media-center__title h1"><?php the_title(); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -20,9 +20,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Полезные статьи
+						Полезная литература
 					</p>
-					<a href="<?php echo get_home_url(); ?>/art/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php echo get_home_url(); ?>/lit/" class="media-center__item_btn">Показать все</a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -104,9 +104,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Полезные статьи
+						Обзор новинок на рынке
 					</p>
-					<a href="<?php echo get_home_url(); ?>/art/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php echo get_home_url(); ?>/rev/" class="media-center__item_btn">Показать все</a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -146,9 +146,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Полезные статьи
+						Видео
 					</p>
-					<a href="<?php echo get_home_url(); ?>/art/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php echo get_home_url(); ?>/video/" class="media-center__item_btn">Показать все</a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -188,15 +188,24 @@ get_header();
 		</div>
 
 		<div class="media-center__links">
-			<div class="media-center__links_item">
-				<a href="<?php echo get_home_url(); ?>/akademija-dt/">Академия DT</a>
-			</div>
-			<div class="media-center__links_item">
-				<a href="<?php echo get_home_url(); ?>/turnir-dt/">Турнир DT</a>
-			</div>
-			<div class="media-center__links_item">
-				<a href="<?php echo get_home_url(); ?>/uslovija-garantii/">Условия гарантии</a>
-			</div>
+			<a href="<?php echo get_home_url(); ?>/akademija-dt/" class="media-center__links_item">
+				<div class="media-center__links_img">
+					<img src="<?php the_field('media_centr_img', 'option'); ?>" alt="">
+				</div>
+				<p>Академия DT</p>
+			</a>
+			<a href="<?php echo get_home_url(); ?>/turnir-dt/" class="media-center__links_item">
+				<div class="media-center__links_img">
+					<img src="<?php the_field('media_centr_img_1', 'option'); ?>" alt="">
+				</div>
+				<p>Турнир DT</p>
+			</a>
+			<a href="<?php echo get_home_url(); ?>/uslovija-garantii/" class="media-center__links_item">
+				<div class="media-center__links_img">
+					<img src="<?php the_field('media_centr_img_2', 'option'); ?>" alt="">
+				</div>
+				<p>Условия гарантии</p>
+			</a>
 		</div>
 
 	</div>

@@ -40,7 +40,7 @@ get_header();
 		<?php $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$params = array(
 				'posts_per_page' => 8, // количество постов на странице
-				'post_type'       => 'media', // тип постов
+				'post_type'       => 'art', // тип постов
 				'paged'           => $current_page // текущая страница
 			);
 			query_posts($params);

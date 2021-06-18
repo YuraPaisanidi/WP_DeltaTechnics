@@ -703,6 +703,7 @@
 	display: grid
 	grid-template-columns: 1fr 1fr
 	margin-top: -5px
+	background-color: $dark
 
 	+r(576)
 		grid-template-columns: 1fr
@@ -1145,7 +1146,7 @@
 		padding-left: 5px
 
 	.wpcf7-response-output
-		// position: absolute
+		position: absolute
 		top: 101%
 		right: 0
 		left: 0
@@ -1153,6 +1154,7 @@
 		margin: 0 !important
 		font-size: 11px
 		border-radius: 6px
+		background-color: #fff
 
 	.ajax-loader
 		display: none
@@ -3461,16 +3463,17 @@
 
 				+r(480)
 					align-items: center
-
-				
+	
 				p 
 					font-weight: 600
 
 					+r(768)
 						font-size: 14px
 
+					+r(480)
+						text-align: center
 
-			a 
+			a
 				color: $text
 				font-weight: 600
 
@@ -3747,12 +3750,15 @@
 			grid-template-columns: 1fr
 
 		&_item
+			display: flex
+			flex-direction: column
 			background-color: $accent
 			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 			border-radius: 10px
 			height: 230px
 			max-width: 350px
 			width: 100%
+			overflow: hidden
 			+transition
 
 			+r(992)
@@ -3767,23 +3773,41 @@
 			&:hover
 				transform: scale(1.01)
 
-			a 
-				display: flex
-				justify-content: center
-				align-items: flex-end
-				font-size: 24px
-				color: $text
-				font-weight: 600
+		&_img
+			width: 100%
+			height: 65%
+			overflow: hidden
+
+			img
 				width: 100%
 				height: 100%
-				padding-bottom: 30px
+				object-fit: cover
 
-				+r(992)
-					font-size: 16px
+		p
+			font-size: 24px
+			font-weight: 600
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 35%
 
-				+r(576)
-					font-size: 14px
-					padding-bottom: 15px
+			// a
+			// 	display: flex
+			// 	justify-content: center
+			// 	align-items: flex-end
+			// 	font-size: 24px
+			// 	color: $text
+			// 	font-weight: 600
+			// 	width: 100%
+			// 	height: 100%
+			// 	padding-bottom: 30px
+
+			// 	+r(992)
+			// 		font-size: 16px
+
+			// 	+r(576)
+			// 		font-size: 14px
+			// 		padding-bottom: 15px
 
 	&__cat
 		.media-center__item
@@ -4085,6 +4109,20 @@
 
 	.top-bg__title
 		width: 100%	
+
+	ul,ol
+		padding-left: 30px
+		margin-bottom: 20px
+
+	ul
+		list-style-type: disc
+
+	blockquote
+		padding: 0 45px
+		margin: 15px 0
+
+		+r(480)
+			padding: 0 25px
 
 //----------------PRIVACY POLICY---------------
 .policy

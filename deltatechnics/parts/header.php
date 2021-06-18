@@ -1,11 +1,11 @@
 <div class="side-menu">
 	<div class="side-menu__item">
-		<a href="<?php the_field('sidebar_url_1', 'option'); ?>" target="_blank">
+		<a href="<?php the_field('sidebar_url_1', 'option'); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery-icon.svg" alt="">
 		</a>
 	</div>
 	<div class="side-menu__item">
-		<a href="<?php the_field('sidebar_url_2', 'option'); ?>" target="_blank">
+		<a href="<?php the_field('sidebar_url_2', 'option'); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pin-icon.svg" alt="">
 		</a>
 	</div>
@@ -31,7 +31,7 @@
 					'menu_class'=>'header__nav_menu',
 					'theme_location'=>'menu',
 					) );
-					?>
+			?>
 
 			<div class="header__nav_accord">
 
