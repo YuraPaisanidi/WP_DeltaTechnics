@@ -1,0 +1,20 @@
+Пароль от ВП : %HC7WNRdC$SXj3hafnej66Ge
+login: Admin
+Почта: flexdesign.sales@gmail.com
+
+FTP:
+FTP server: ftp://gvh57.mirohost.net
+FTP login: deltatechnics
+FTP password: 2vdgo8SUhs48
+
+Данные для работы с базой данных MySQL :
+MySQL server: gvh57.mirohost.net
+MySQL database: deltatechnics
+MySQL login: u_deltatechn
+MySQL password: DQvDFKyC
+
+
+Конфиг доступа к базе данных
+define( 'DB_NAME', 'deltatechnics' );
+define( 'DB_USER', 'u_deltatechn' );
+define( 'DB_PASSWORD', 'DQvDFKyC' );
