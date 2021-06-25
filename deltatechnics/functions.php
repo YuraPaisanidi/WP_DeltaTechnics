@@ -236,77 +236,77 @@ add_action( 'init', 'video_post_type', 0 );
 
 
 //------------------пагинация----------------------
-    function wptuts_pagination( $args = array() ) {
-        
-        $defaults = array(
-            'range'           => 4,
-            'custom_query'    => FALSE,
-            'previous_string' => __( '<', 'text-domain' ),
-            'next_string'     => __( '>', 'text-domain' ),
-            'before_output'   => '<nav class="navigation pagination">',
-            'after_output'    => '</nav>'
-        );
-        
-        $args = wp_parse_args( 
-            $args, 
-            apply_filters( 'wp_bootstrap_pagination_defaults', $defaults )
-        );
-        
-        $args['range'] = (int) $args['range'] - 1;
-        if ( !$args['custom_query'] )
-            $args['custom_query'] = @$GLOBALS['wp_query'];
-        $count = (int) $args['custom_query']->max_num_pages;
-        $page  = intval( get_query_var( 'paged' ) );
-        $ceil  = ceil( $args['range'] / 2 );
-        
-        if ( $count <= 1 )
-            return FALSE;
-        
-        if ( !$page )
-            $page = 1;
-        
-        if ( $count > $args['range'] ) {
-            if ( $page <= $args['range'] ) {
-                $min = 1;
-                $max = $args['range'] + 1;
-            } elseif ( $page >= ($count - $ceil) ) {
-                $min = $count - $args['range'];
-                $max = $count;
-            } elseif ( $page >= $args['range'] && $page < ($count - $ceil) ) {
-                $min = $page - $ceil;
-                $max = $page + $ceil;
-            }
-        } else {
-            $min = 1;
-            $max = $count;
-        }
-        
-        $echo = '';
-        $previous = intval($page) - 1;
+	function wptuts_pagination( $args = array() ) {
+			
+			$defaults = array(
+					'range'           => 4,
+					'custom_query'    => FALSE,
+					'previous_string' => __( '<', 'text-domain' ),
+					'next_string'     => __( '>', 'text-domain' ),
+					'before_output'   => '<nav class="navigation pagination">',
+					'after_output'    => '</nav>'
+			);
+			
+			$args = wp_parse_args( 
+					$args, 
+					apply_filters( 'wp_bootstrap_pagination_defaults', $defaults )
+			);
+			
+			$args['range'] = (int) $args['range'] - 1;
+			if ( !$args['custom_query'] )
+					$args['custom_query'] = @$GLOBALS['wp_query'];
+			$count = (int) $args['custom_query']->max_num_pages;
+			$page  = intval( get_query_var( 'paged' ) );
+			$ceil  = ceil( $args['range'] / 2 );
+			
+			if ( $count <= 1 )
+					return FALSE;
+			
+			if ( !$page )
+					$page = 1;
+			
+			if ( $count > $args['range'] ) {
+					if ( $page <= $args['range'] ) {
+							$min = 1;
+							$max = $args['range'] + 1;
+					} elseif ( $page >= ($count - $ceil) ) {
+							$min = $count - $args['range'];
+							$max = $count;
+					} elseif ( $page >= $args['range'] && $page < ($count - $ceil) ) {
+							$min = $page - $ceil;
+							$max = $page + $ceil;
+					}
+			} else {
+					$min = 1;
+					$max = $count;
+			}
+			
+			$echo = '';
+			$previous = intval($page) - 1;
 
 
-        // $previous = esc_attr( get_pagenum_link($previous) );
-        //     if ( $previous && (1 != $page) )
-        //     $echo .= '<a href="' . $previous . '" title="' . __( '', 'text-domain') . '">' . $args['previous_string'] . '</a>';
-        
-        if ( !empty($min) && !empty($max) ) {
-            for( $i = $min; $i <= $max; $i++ ) {
-                if ($page == $i) {
-                    $echo .= '<span class="active">' . str_pad( (int)$i, 1, '0', STR_PAD_LEFT ) . '</span>';
-                } else {
-                    $echo .= sprintf( '<a href="%s">%2d</a>', esc_attr( get_pagenum_link($i) ), $i );
-                }
-            }
-        }
-        
-        // $next = intval($page) + 1;
-        // $next = esc_attr( get_pagenum_link($next) );
-        // if ($next && ($count != $page) )
-        //     $echo .= '<a href="' . $next . '" title="' . __( '', 'text-domain') . '">' . $args['next_string'] . '</a>';
-        
-        if ( isset($echo) )
-            echo $args['before_output'] . $echo . $args['after_output'];
-    }
+			// $previous = esc_attr( get_pagenum_link($previous) );
+			//     if ( $previous && (1 != $page) )
+			//     $echo .= '<a href="' . $previous . '" title="' . __( '', 'text-domain') . '">' . $args['previous_string'] . '</a>';
+			
+			if ( !empty($min) && !empty($max) ) {
+					for( $i = $min; $i <= $max; $i++ ) {
+							if ($page == $i) {
+									$echo .= '<span class="active">' . str_pad( (int)$i, 1, '0', STR_PAD_LEFT ) . '</span>';
+							} else {
+									$echo .= sprintf( '<a href="%s">%2d</a>', esc_attr( get_pagenum_link($i) ), $i );
+							}
+					}
+			}
+			
+			// $next = intval($page) + 1;
+			// $next = esc_attr( get_pagenum_link($next) );
+			// if ($next && ($count != $page) )
+			//     $echo .= '<a href="' . $next . '" title="' . __( '', 'text-domain') . '">' . $args['next_string'] . '</a>';
+			
+			if ( isset($echo) )
+					echo $args['before_output'] . $echo . $args['after_output'];
+	}
 
 //------------------Хлебные крошки----------------------
 	function dimox_breadcrumbs() {
@@ -512,11 +512,81 @@ add_action( 'init', 'video_post_type', 0 );
 		}
 	}
 
-//-------------------CF7---------------------------------
-// wpcf7_add_shortcode( 'cf7_extra_fields', 'cf7_extra_fields_func', true );
-// function cf7_extra_fields_func( $atts ) {
-//    $html = '';
-//    $html .= '<input type="hidden" name="page-title" value="'.get_the_title().'" />';
-//    $html .= '<input type="hidden" name="page-url" value="'.get_the_permalink().'" />';
-//    return $html;
-// }
+//-----------------Woocommerce support---------------------
+function deltatechnics_add_woocommerce_support() {
+		add_theme_support( 'woocommerce' );
+	}
+
+add_action( 'after_setup_theme', 'deltatechnics_add_woocommerce_support' );
+
+//-----------------Remove actions-----------------------
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+
+//-----------------Add actions-------------------------
+add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_price', 5 );
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'truemisha_sale_badge', 25 );
+ 
+function truemisha_sale_badge() {
+ 
+	// получаем объект текущего товара в цикле
+	global $product;
+ 
+	// есле не распродажа, ничего не делаем
+	if ( ! $product->is_on_sale() ) {
+		return;
+	}
+ 
+	if ( $product->is_type( 'simple' ) ) { // простые товары
+ 
+		// рассчитываем процент скидки
+		$percentage = ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100;
+ 
+	} elseif ( $product->is_type( 'variable' ) ) { // вариативные товары
+ 
+		$percentage = 0;
+ 
+		// запускаем цикл для вариаций товара
+		foreach ( $product->get_children() as $variation_id ) {
+ 
+			// получаем объект вариации
+			$variation = wc_get_product( $variation_id );
+ 
+			// не распродажа? пропускаем итерацию цикла
+			if( ! $variation->is_on_sale() ) {
+				continue;
+			}
+ 
+			// обычная цена вариации
+			$regular_price = $variation->get_regular_price();
+			// цена распродажи вариации
+			$sale_price = $variation->get_sale_price();
+			// процент скидки вариации
+			$variation_percentage = ( $regular_price - $sale_price ) / $regular_price * 100;
+ 
+			if ( $variation_percentage > $percentage ) {
+				$percentage = $variation_percentage;
+			}
+ 
+		}
+ 
+	}
+ 
+	if ( $percentage > 0 ) {
+		echo '<span class="onsale">-' . round( $percentage ) . '%</span>';
+	}
+ 
+}
+
+//----------------Add to cart------------------------
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
+add_filter( 'woocommerce_product_add_to_cart_text', 'tb_woo_custom_cart_button_text' );   
+function tb_woo_custom_cart_button_text() {
+        return __( 'Замовити', 'woocommerce' );
+}

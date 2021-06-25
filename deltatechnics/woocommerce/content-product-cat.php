@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template name: Категория товара
  * The template for displaying product category thumbnails within loops
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/content-product-cat.php.
