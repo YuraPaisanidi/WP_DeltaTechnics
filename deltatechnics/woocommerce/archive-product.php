@@ -46,7 +46,7 @@ do_action( 'woocommerce_before_main_content' );
 		?>
 	</div>
 </header>
-<div class="container">
+<div class="shop-wrapper container">
 <?php
 if ( woocommerce_product_loop() ) {
 

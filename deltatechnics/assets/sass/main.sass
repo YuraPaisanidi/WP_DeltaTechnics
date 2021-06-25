@@ -1792,7 +1792,7 @@
 .clothes-list
 	background-color: $bgColor
 
-	&__content,
+	&__content
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr 1fr
 		grid-gap: 30px
@@ -4234,3 +4234,64 @@
 #wpadminbar
 		+r(600)
 			position: fixed
+
+.shop-wrapper
+	padding: 35px 0
+
+
+.products
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-gap: 30px
+	margin-bottom: 30px
+
+.woocommerce-pagination
+	display: flex
+	justify-content: center
+
+	ul
+		+between
+		gap: 8px
+
+	.next
+		&:last-child
+			margin-left: 18px
+			position: relative
+
+			&::before
+				content: ''
+				position: absolute
+				border-left: 1px solid #000
+				opacity: 0.1
+				left: -14px
+				height: 20px
+				top: 6px
+
+	a,span
+		height: 32px
+		min-width: 32px
+		background-color: $accent
+		border-radius: 4px
+		font-weight: 600
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 0 10px
+		color: $text
+		+transition
+
+		&:focus
+			color: $accent
+			background-color: $red
+
+		&:hover
+			background-color: $dark
+			color: $accent
+	
+	.current
+		color: $accent
+		background-color: $red
+
+		&:hover
+			color: $accent
+			background-color: $red
