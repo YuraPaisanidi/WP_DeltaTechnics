@@ -10,6 +10,8 @@
 	<link rel="icon" href="img/favicon.ico">
 	<meta property="og:image" content="img/preview.jpg">
 
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
 </head>
 
 <?php wp_head(); ?>

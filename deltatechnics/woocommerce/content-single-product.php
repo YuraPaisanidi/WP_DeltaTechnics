@@ -33,25 +33,50 @@ if ( post_password_required() ) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="product-page__top">
-		<?php
-		/**
-		 * Hook: woocommerce_before_single_product_summary.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-		?>
+		<div class="product-page__images">
+			<?php
+			/**
+			 * Hook: woocommerce_before_single_product_summary.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10
+			 * @hooked woocommerce_show_product_images - 20
+			 */
+			do_action( 'woocommerce_before_single_product_summary' );
+			?>
 
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_info.
-		 */
-			do_action('woocommerce_single_product_info');
-		?>
+			<ol class="product-page__images_list">
+				<li>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
+				</li>
+				<li>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
+				</li>
+				<li>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
+				</li>
+				<li>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
+				</li>
+			</ol>
 
-		
+		</div>
 
+		<div class="product-page__info">
+			<?php
+			/**
+			 * Hook: woocommerce_single_product_info.
+			 */
+				do_action('woocommerce_single_product_info');
+			?>
+			<div class="product-page__price">
+			<?php
+			/**
+			 * Hook: woocommerce_single_product_price.
+			 */
+				do_action('woocommerce_single_product_price');
+			?>
+			</div>
+		</div>
 	</div>
 
 		<div class="summary entry-summary">
@@ -59,17 +84,18 @@ if ( post_password_required() ) {
 			/**
 			 * Hook: woocommerce_single_product_summary.
 			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_title - 5 removed
+			 * @hooked woocommerce_template_single_rating - 10 removed
+			 * @hooked woocommerce_template_single_price - 10 removed
+			 * @hooked woocommerce_template_single_excerpt - 20 removed
+			 * @hooked woocommerce_template_single_add_to_cart - 30 removed
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
 			 * @hooked WC_Structured_Data::generate_product_data() - 60
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 			?>
+			</div>
 		</div>
 
 

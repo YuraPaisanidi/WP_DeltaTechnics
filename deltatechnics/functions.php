@@ -531,6 +531,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 
 //-----------------Add actions-------------------------
@@ -539,8 +540,8 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'truemisha_sale_badge', 2
 add_action( 'woocommerce_single_product_info', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_single_product_info', 'woocommerce_template_single_rating', 10 );
 add_action( 'woocommerce_single_product_info', 'woocommerce_template_single_excerpt', 10 );
-add_action( 'woocommerce_single_product_info', 'woocommerce_template_single_price', 20 );
-add_action( 'woocommerce_single_product_info', 'woocommerce_template_single_add_to_cart', 30 );
+add_action( 'woocommerce_single_product_price', 'woocommerce_template_single_price', 20 );
+add_action( 'woocommerce_single_product_price', 'woocommerce_template_single_add_to_cart', 30 );
 
 
 
@@ -600,5 +601,15 @@ function truemisha_sale_badge() {
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
 add_filter( 'woocommerce_product_add_to_cart_text', 'tb_woo_custom_cart_button_text' );   
 function tb_woo_custom_cart_button_text() {
-        return __( 'Замовити', 'woocommerce' );
+				return __( 'Замовити', 'woocommerce' );
+}
+
+//---------------Change currency symbol--------------
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'UAH': $currency_symbol = 'грн'; break;
+     }
+     return $currency_symbol;
 }
