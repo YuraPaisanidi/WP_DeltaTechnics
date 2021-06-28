@@ -875,7 +875,7 @@
 	border-radius: 10px
 	padding: 20px 15px 
 	gap: 15px
-	max-width: 255px
+	width: 255px
 
 	.product
 		padding: 0 !important
@@ -899,6 +899,7 @@
 	.woocommerce-LoopProduct-link
 		display: flex
 		flex-direction: column
+		justify-content: flex-start
 		gap: 15px
 		position: relative
 
@@ -2242,7 +2243,7 @@
 		+r(992)
 			flex-direction: column
 
-	&__images
+	&__images, .woocommerce-product-gallery
 		+between
 		padding: 30px
 		gap: 15px
@@ -2254,7 +2255,7 @@
 		+r(480)
 			padding: 10px
 
-		&_main
+		&_main, .wp-post-image
 			max-width: 455px
 			width: 100%
 			position: relative
@@ -4295,3 +4296,6 @@
 		&:hover
 			color: $accent
 			background-color: $red
+
+.quantity
+	display: none
