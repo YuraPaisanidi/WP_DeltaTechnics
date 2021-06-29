@@ -605,11 +605,11 @@ function tb_woo_custom_cart_button_text() {
 }
 
 //---------------Change currency symbol--------------
-add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+// add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
-function change_existing_currency_symbol( $currency_symbol, $currency ) {
-     switch( $currency ) {
-          case 'UAH': $currency_symbol = 'грн'; break;
-     }
-     return $currency_symbol;
-}
+// function change_existing_currency_symbol( $currency_symbol, $currency ) {
+//      switch( $currency ) {
+//           case 'UAH': $currency_symbol = 'грн'; break;
+//      }
+//      return $currency_symbol;
+// }

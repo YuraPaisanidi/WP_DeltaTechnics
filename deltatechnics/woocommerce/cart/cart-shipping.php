@@ -44,6 +44,7 @@ $calculator_text          = '';
 				<?php endforeach; ?>
 			</ul>
 			<?php if ( is_cart() ) : ?>
+		
 				<p class="woocommerce-shipping-destination">
 					<?php
 					if ( $formatted_destination ) {
