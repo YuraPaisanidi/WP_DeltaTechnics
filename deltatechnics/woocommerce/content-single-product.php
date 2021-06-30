@@ -33,7 +33,6 @@ if ( post_password_required() ) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="product-page__top">
-		<div class="product-page__images">
 			<?php
 			/**
 			 * Hook: woocommerce_before_single_product_summary.
@@ -44,23 +43,6 @@ if ( post_password_required() ) {
 			do_action( 'woocommerce_before_single_product_summary' );
 			?>
 
-			<ol class="product-page__images_list">
-				<li>
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/custom-bg.jpg" alt="">
-				</li>
-			</ol>
-
-		</div>
-
 		<div class="product-page__info">
 			<?php
 			/**
@@ -68,7 +50,7 @@ if ( post_password_required() ) {
 			 */
 				do_action('woocommerce_single_product_info');
 			?>
-			<div class="product-page__price">
+
 			<?php
 			/**
 			 * Hook: woocommerce_single_product_price.

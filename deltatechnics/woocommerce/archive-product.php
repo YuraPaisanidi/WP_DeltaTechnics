@@ -46,7 +46,7 @@ do_action( 'woocommerce_before_main_content' );
 		?>
 	</div>
 </header>
-<div class="shop-wrapper container">
+
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -98,7 +98,6 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' ); ?>
 
-</div>
 <?php
 /**
  * Hook: woocommerce_sidebar.

@@ -876,6 +876,7 @@
 	padding: 20px 15px 
 	gap: 15px
 	width: 255px
+	min-height: 435px
 
 	.product
 		padding: 0 !important
@@ -901,7 +902,11 @@
 		flex-direction: column
 		justify-content: flex-start
 		gap: 15px
+		height: 100%
 		position: relative
+
+		&:hover
+			// background-color: transparent
 
 	&__top
 		width: 100%
@@ -3352,10 +3357,12 @@
 	
 	&__order
 		+between
+		flex-direction: row-reverse
 		padding-top: 30px
 		width: 100%
 		padding-right: 140px
 		padding-left: 475px
+		border-top: 1px solid #c6c6d2
 
 		+r(1200)
 			padding-left: 400px
@@ -3366,16 +3373,17 @@
 			padding-top: 30px
 
 		&_btn
-			max-width: 160px
-			width: 100%
-			height: 40px
-			background-color: $red
-			border-radius: 5px
-			color: $accent
-			display: flex
-			align-items: center
-			justify-content: center
-			font-weight: 600
+			min-width: 160px !important
+			width: 100% !important
+			height: 40px !important
+			background-color: $red !important
+			border-radius: 5px !important
+			color: $accent !important
+			display: flex !important
+			align-items: center !important
+			justify-content: center !important
+			font-weight: 600 !important
+			padding: 0 !important
 			+transition
 
 			+r(480)
@@ -3383,8 +3391,8 @@
 				font-size: 14px
 
 			&:hover
-				background-color: $dark
-				color: $accent
+				background-color: $dark !important
+				color: $accent !important
 	
 	&__total
 		+between
@@ -4267,10 +4275,6 @@
 	grid-gap: 30px
 	margin-bottom: 30px
 
-.woocommerce-pagination
-	display: flex
-	justify-content: center
-
 	ul
 		+between
 		gap: 8px
@@ -4301,14 +4305,6 @@
 		padding: 0 10px
 		color: $text
 		+transition
-
-		&:focus
-			color: $accent
-			background-color: $red
-
-		&:hover
-			background-color: $dark
-			color: $accent
 	
 	.current
 		color: $accent
@@ -4318,7 +4314,7 @@
 			color: $accent
 			background-color: $red
 
-//---------------Product cart---------------
+//--------------- WC Product cart---------------
 .product
 	width: 100%
 
@@ -4390,7 +4386,7 @@
 		height: 100%
 
 
-//------------------Shopping cart-----------
+//------------------WC Shopping cart-----------
 .shop_table
 	border: none !important
 	border-spacing: 0 30px
@@ -4433,9 +4429,14 @@
 	width: 42px !important
 	height: 42px !important
 	background-color: $red
+	border-radius: 5px
+	+transition
+
+	&:hover
+		background-color: $dark
 
 	&::before
-		content: ''
+		content: '' !important
 		position: absolute
 		top: 0
 		left: 0
@@ -4445,8 +4446,10 @@
 		width: 100%
 		height: 100%
 		background-image: url(../img/delete.svg) !important
-		+cover
+		background-size: 60%
+		background-repeat: no-repeat
+		background-position: center
 
-.product-remove
-	border-radius: 10px
-	
+.order-total, .shopping-cart__total_sum
+	margin: 0 !important
+	font-family: $pricefnt
