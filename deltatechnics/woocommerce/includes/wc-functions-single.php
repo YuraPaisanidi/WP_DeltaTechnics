@@ -90,4 +90,22 @@ function tb_woo_custom_cart_button_text() {
 //      return $currency_symbol;
 // }
 
+//--------------------------------------------похожі_товари--------------------------------
+function my_related_products_args( $args ) {
+	$args['posts_per_page'] = 4; // количество "Похожих товаров"
+	$args['columns'] = 4; // количество колонок П.т
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'my_related_products_args' );
+/** задаём количество похожих товаров, колонок */
+
+//-----------------Product gallery-------------------
+function schoolstudy_woocommerce_setup()
+{
+	add_theme_support('woocommerce');
+	add_theme_support('wc-product-gallery-zoom');
+	add_theme_support('wc-product-gallery-lightbox');
+	add_theme_support('wc-product-gallery-slider');
+}
+add_action('after_setup_theme', 'schoolstudy_woocommerce_setup');
 
