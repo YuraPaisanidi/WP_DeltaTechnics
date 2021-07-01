@@ -520,3 +520,5 @@ add_action( 'init', 'video_post_type', 0 );
 		require get_template_directory() . '/woocommerce/includes/wc-functions-archive.php';
 		require get_template_directory() . '/woocommerce/includes/wc-functions-remove.php';;
 	}
+
+	require get_template_directory() . '/includes/cart.php';

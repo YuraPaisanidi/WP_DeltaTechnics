@@ -876,7 +876,7 @@
 	padding: 20px 15px 
 	gap: 15px
 	width: 255px
-	min-height: 435px
+	min-height: 385px
 
 	.product
 		padding: 0 !important
@@ -904,9 +904,7 @@
 		gap: 15px
 		height: 100%
 		position: relative
-
-		&:hover
-			// background-color: transparent
+		padding: 0 !important
 
 	&__top
 		width: 100%
@@ -1058,6 +1056,8 @@
 
 	&__price
 		+between
+		flex-wrap: nowrap
+		gap: 10px
 		width: 100%
 
 		+r(576)
@@ -1072,7 +1072,8 @@
 		p, .woocommerce-Price-amount
 			font-size: 24px
 			font-family: $pricefnt
-			width: 50%
+			padding: 0
+			word-wrap: break-word !important
 
 			+r(768)
 				font-size: 18px
@@ -1080,14 +1081,17 @@
 			+r(480)
 				font-size: 24px
 
-	.price
-		width: 50%
-
 	bdi
-		word-wrap: break-word
+		display: flex
+		word-wrap: break-word !important
+
+		.woocommerce-Price-currencySymbol
+			background-color: transparent
+			padding: 0
+			min-width: 0
 
 	&__btn, .add_to_cart_button 
-		width: 100px
+		min-width: 100px
 		height: 35px
 		background-color: $red
 		display: flex
@@ -1322,8 +1326,12 @@
 				max-width: 20px
 //----------------------PAGINATION------------------
 .pagination
-	+between
+	display: flex
+	justify-content: center
 	gap: 8px
+
+	&__wrapper
+		padding-bottom: 30px
 
 	ul
 		+between
@@ -1820,28 +1828,28 @@
 			padding-right: 10px
 			padding-left: 10px
 
-	&__menu
-		display: flex
-		flex-direction: column
-		align-items: center
-		justify-content: space-between
-		height: 450px
-		padding: 18px 16px
-		border-radius: 10px
-		background-color: #fff
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-		grid-row-start: 1
-		grid-row-end: 5
-		position: sticky
-		top: 100px
+	// &__menu
+	// 	display: flex
+	// 	flex-direction: column
+	// 	align-items: center
+	// 	justify-content: space-between
+	// 	height: 450px
+	// 	padding: 18px 16px
+	// 	border-radius: 10px
+	// 	background-color: #fff
+	// 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+	// 	grid-row-start: 1
+	// 	grid-row-end: 5
+	// 	position: sticky
+	// 	top: 100px
 
-		+r(1200)
-			grid-row-end: 7
+	// 	+r(1200)
+	// 		grid-row-end: 7
 
-		+r(480)
-			grid-row-start: 1
-			grid-row-end: 1
-			position: static
+	// 	+r(480)
+	// 		grid-row-start: 1
+	// 		grid-row-end: 1
+	// 		position: static
 
 		&_drop
 			border-bottom: 1px solid #E8E8F1
@@ -3383,7 +3391,7 @@
 			align-items: center !important
 			justify-content: center !important
 			font-weight: 600 !important
-			padding: 0 !important
+			padding: 10px !important
 			+transition
 
 			+r(480)
@@ -4265,7 +4273,13 @@
 		+r(600)
 			position: fixed
 
+
+//-----------------WC Shop---------------------
 .shop-wrapper
+	display: grid
+	grid-template-columns: 1fr 3fr
+	grid-gap: 30px
+	margin-bottom: 30px
 	padding: 35px 0
 
 
@@ -4273,7 +4287,6 @@
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr
 	grid-gap: 30px
-	margin-bottom: 30px
 
 	ul
 		+between
@@ -4314,6 +4327,69 @@
 			color: $accent
 			background-color: $red
 
+.wpfMainWrapper
+	background-color: $accent
+	padding: 15px
+	border-radius: 10px
+	background-color: #fff
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+	grid-row-start: 1
+	grid-row-end: 5
+
+	.wpfFilterContent
+		height: 100%
+
+		select
+			width: 100%
+			border-radius: 59px
+			border: 1px solid #E0E5EB
+			padding: 8px 15px
+			font-size: 15px
+			background-image: url(../img/select-arrow.png)
+			background-repeat: no-repeat
+			background-position: right 15px top 50%
+			appearance: none
+	
+	.wpfFilterVerScroll
+		max-height: 100% !important
+		display: flex
+		flex-direction: column
+		gap: 5px
+
+		.wpfCheckbox
+			display: none
+
+		.wpfValue
+			background-color: transparent
+
+		.wpfDisplay
+			width: 100%
+			height: 35px
+			background-color: #F3F5F8
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			padding-left: 15px
+			color: $text
+			font-size: 15px
+			border-radius: 5px
+			border: none
+			+transition
+
+			&:hover,
+			&:active
+				background-color: $red
+
+				.wpfFilterTaxNameWrapper
+					color: $accent
+				
+
+			.wpfFilterTaxNameWrapper
+				font-weight: 400
+				+transition
+
+	.wpfFilterWrapper
+		padding: 0 !important
 //--------------- WC Product cart---------------
 .product
 	width: 100%
@@ -4385,7 +4461,6 @@
 		width: 100%
 		height: 100%
 
-
 //------------------WC Shopping cart-----------
 .shop_table
 	border: none !important
@@ -4404,7 +4479,7 @@
 	width: 160px
 	height: 120px
 	overflow: hidden
-	border-radius: 10px
+	border-radius: 10px 0 0 10px
 	padding: 0 0 0 40px !important
 
 .shopping-cart__item_img
@@ -4423,6 +4498,62 @@
 
 	.shopping-cart__item_num
 		width: 45px !important
+
+.wbu-btn-sub, .wbu-btn-inc
+	width: 42px !important
+	height: 42px !important
+	display: flex !important
+	align-items: center
+	justify-content: center
+	font-size: 24px
+	border-radius: 5px
+	font-weight: 600
+	border: none
+
+.wbu-btn-inc
+	background-color: $red
+	color: $accent
+
+	&:hover
+		color: $accent
+		background-color: lighten($red, 5%)
+
+.wbu-btn-sub
+	background-color: #EAEDF3
+	opacity: 0.3
+	color: $text
+
+	&:hover
+		color: $text
+		background-color: darken(#EAEDF3, 10%)
+
+.qty
+	background-color: transparent
+	width: 47px
+	height: 42px
+	border: none
+	text-align: center
+	font-weight: 600
+
+	+r(1200)
+		font-size: 14px
+
+	+r(480)
+		font-size: 12px
+
+.woocommerce-info
+	border-radius: 10px
+	border: none
+
+.woocommerce-message
+	border: none
+	border-radius: 5px
+
+	.restore-item
+		color: $red
+
+.product-remove
+	border-radius: 0px 10px 10px 0px
 
 .woocommerce a.remove
 	position: relative

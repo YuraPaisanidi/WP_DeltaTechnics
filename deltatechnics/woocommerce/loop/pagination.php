@@ -49,6 +49,6 @@ if ( $total <= 1 ) {
 	);
 	?>
 </nav> -->
-<div class="container">
+<div class="container pagination__wrapper">
 	<?php wptuts_pagination(); ?> 
 </div>

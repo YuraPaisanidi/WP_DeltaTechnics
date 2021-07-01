@@ -20,4 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="shop-wrapper container">
+	<div class="clothes-list__menu">
+		<?php echo do_shortcode( '[wpf-filters id=2]' ); ?>
+	</div>
 	<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">

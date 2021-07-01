@@ -192,7 +192,7 @@
 			</div>
 
 			<div class="header__btns_item--cart">
-				<a href="<?php echo get_home_url(); ?>/korzina/">
+				<a href="<?php echo get_home_url(); ?>/cart/">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg" alt="">
 					<span>0</span>
 				</a>

@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<p class="order-total">
-			<span><?php esc_html_e( 'Итого', 'woocommerce' ); ?></span>
+			<span><?php esc_html_e( 'Разом', 'woocommerce' ); ?></span>
 			<p class="shopping-cart__total_sum" data-title="<?php esc_attr_e( 'Итого', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></p>
 		</p>
 
