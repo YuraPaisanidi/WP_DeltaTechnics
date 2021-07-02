@@ -55,10 +55,11 @@
 		font-size: 28px
 
 .main, #main
-	margin-top: 70px
+	margin-top: 45px
 
-.site-main
+.content-area
 	background-color: $bgColor
+	padding-top: 25px
 
 // -----CONTAINER-----
 .container
@@ -325,7 +326,7 @@
 			width: 100%
 			display: flex
 			flex-wrap: wrap
-			gap: 50px
+			gap: 35px
 
 			+r(1200)
 				display: none
@@ -355,13 +356,12 @@
 					position: absolute
 					top: 90%
 					width: 250px
-					min-height: 250px
 					align-items: flex-start
 					display: flex
 					flex-direction: column
 					justify-content: space-between
 					background-color: $dark
-					padding: 30px 20px
+					padding: 30px 20px 20px 20px
 					box-shadow: 0 0 15px 0 rgba(#000, .15)
 					transition: all .6s
 					visibility: hidden
@@ -2242,6 +2242,7 @@
 		align-items: center
 		justify-content: space-between
 		gap: 30px
+		padding-top: 25px
 
 		+r(1200)
 			gap: 20px
@@ -2251,6 +2252,7 @@
 		width: 100%
 		background-color: $accent
 		border-radius: 10px
+		padding: 30px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 		
 		+r(992)
@@ -2378,29 +2380,6 @@
 		+r(768)
 			flex-direction: column
 			padding: 0
-
-		.price
-			display: flex
-			flex-direction: column
-			justify-content: space-between
-			margin-bottom: 20px
-
-			del
-				opacity: 0.4
-
-
-			bdi
-				word-wrap: break-word
-				font-size: 32px !important
-
-			ins
-				text-decoration: none
-
-		p
-			font-size: 32px !important
-			
-		span
-			font-size: 18px
 
 	&__btns
 		+between
@@ -4280,8 +4259,7 @@
 	grid-template-columns: 1fr 3fr
 	grid-gap: 30px
 	margin-bottom: 30px
-	padding: 35px 0
-
+	padding: 35px 0 0 0
 
 .products
 	display: grid
@@ -4410,13 +4388,13 @@
 		background-color: $dark
 		color: $accent
 
-.woocommerce-product-gallery
-	position: relative
-	max-width: 455px
-	width: 100%
+// .woocommerce-product-gallery
+// 	position: relative
+// 	max-width: 455px
+// 	width: 100%
 
-.product-page__images
-	position: relative
+// .product-page__images
+// 	position: relative
 
 	.onsale
 		position: absolute
@@ -4434,6 +4412,57 @@
 		justify-content: center
 		border-radius: 5px
 
+.woocommerce-product-gallery
+	display: flex
+	justify-content: space-between
+	flex-direction: row-reverse
+
+.flex-viewport
+	max-width: 455px !important
+	margin-right: 15px
+	width: 100%
+	order: 1
+	cursor: url('../img/cursor.png'), pointer
+
+	img
+		max-width: 100%
+		height: auto
+
+.flex-control-nav
+	list-style-type: none
+	padding-left: 0
+	margin-right: 30px
+
+	li
+		margin-bottom: 12px !important
+		width: 125px !important
+		height: 80px !important
+		transition: all .6s
+
+		&:last-child
+			margin-bottom: 0
+
+	img
+		object-fit: cover
+		width: 100% !important
+		height: 100% !important
+		border-radius: 7px !important
+
+.flex-active
+	border: 1px solid #b7b7b7
+
+.flex-active-slide
+	.zoomImg
+		position: absolute !important
+		top: -87.8718px !important
+		left: -185.5px !important
+		opacity: 0 !important
+		width: 720px !important
+		height: 444px !important
+		border: none !important
+		max-width: none !important
+		max-height: none !important
+
 .woocommerce-product-gallery__wrapper
 	position: relative
 	+between
@@ -4441,7 +4470,6 @@
 	overflow: hidden
 	gap: 15px
 	border-right: 1px solid rgba(0, 0, 0,0.1)
-	border-radius: 10px
 	margin: 0
 
 	+r(992)
@@ -4452,14 +4480,37 @@
 
 .woocommerce-product-gallery__image
 	height: 100%
-	width: 100%
+	width: 455px !important
+	border-radius: 10px
 	position: relative
 
 
-	img
-		object-fit: cover
-		width: 100%
-		height: 100%
+.woocommerce-product-gallery__trigger
+	display: none
+
+.wp-post-image
+	width: 455px !important
+	height: 355px !important
+
+.price
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	margin-bottom: 20px
+
+	del
+		opacity: 0.4
+
+
+	bdi
+		word-wrap: break-word
+		font-size: 32px !important
+
+	ins
+		text-decoration: none
+
+	p
+		font-size: 32px !important
 
 //------------------WC Shopping cart-----------
 .shop_table
@@ -4602,7 +4653,6 @@
 	width: 100%
 	order: 1
 	cursor: url('../img/cursor.png'), pointer
-	border-radius: 20px
 
 	img
 		max-width: 100%

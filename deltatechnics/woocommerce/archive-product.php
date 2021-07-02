@@ -29,6 +29,14 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
+<div class="clothes-list__top top-bg">
+	<div class="container">
+		<div class="top-bg__title">
+			<h1 class="clothes-list__title h1"><?php woocommerce_page_title(); ?></h1>
+		</div>
+	</div>
+</div>
+
 <div class="shop-wrapper container">
 	<div class="clothes-list__menu">
 		<?php echo do_shortcode( '[wpf-filters id=2]' ); ?>
