@@ -185,7 +185,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.svg" alt="">
 					<ul>
 						<li>
-							<input type="search">
+							<?php echo do_shortcode( '[aws_search_form]' );?>
 						</li>
 					</ul>
 				</a>

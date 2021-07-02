@@ -19,12 +19,11 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-$heading = apply_filters( 'woocommerce_product_additional_information_heading', __( 'Характеристики', 'woocommerce' ) );
+$heading = apply_filters( 'woocommerce_product_additional_information_heading', __( 'Additional information', 'woocommerce' ) );
 
 ?>
-<div class="product-page__prop">
 	<?php if ( $heading ) : ?>
-		<p class="product-page__subtitle"><?php echo esc_html( $heading ); ?></p>
+		<p><?php echo esc_html( $heading ); ?></p>
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_product_additional_information', $product ); ?>

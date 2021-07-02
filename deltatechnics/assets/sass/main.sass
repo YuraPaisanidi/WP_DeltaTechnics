@@ -880,9 +880,9 @@
 
 	.product
 		padding: 0 !important
-
+		
 	.onsale
-		position: absolute
+		position: absolute 
 		left: 8px
 		top: 8px
 		z-index: 10
@@ -2508,6 +2508,7 @@
 
 			p
 				font-weight: 600
+				max-width: 45%
 
 				+r(992)
 					font-size: 14px
@@ -2549,7 +2550,7 @@
 
 			+r(480)
 				padding: 15px 10px 30px 15px
-				
+
 	&__size
 		display: flex
 		flex-direction: column
@@ -2634,6 +2635,7 @@
 		&_title
 			font-size: 32px
 			font-weight: 600
+			padding: 30px 0 25px 0
 
 			+r(480)
 				font-size: 30px
@@ -4388,16 +4390,14 @@
 		background-color: $dark
 		color: $accent
 
-// .woocommerce-product-gallery
-// 	position: relative
-// 	max-width: 455px
-// 	width: 100%
+.product-page__price
+	gap: 0
 
-// .product-page__images
-// 	position: relative
+.product-page__top
+	position: relative
 
 	.onsale
-		position: absolute
+		position: absolute !important
 		left: 45px
 		top: 45px
 		z-index: 10
@@ -4450,18 +4450,6 @@
 
 .flex-active
 	border: 1px solid #b7b7b7
-
-.flex-active-slide
-	.zoomImg
-		position: absolute !important
-		top: -87.8718px !important
-		left: -185.5px !important
-		opacity: 0 !important
-		width: 720px !important
-		height: 444px !important
-		border: none !important
-		max-width: none !important
-		max-height: none !important
 
 .woocommerce-product-gallery__wrapper
 	position: relative
@@ -4599,6 +4587,7 @@
 .woocommerce-message
 	border: none
 	border-radius: 5px
+	z-index: 100
 
 	.restore-item
 		color: $red
@@ -4643,37 +4632,26 @@
 .columns-4
 	grid-template-columns: 1fr 1fr 1fr 1fr
 
+.related
+	padding-bottom: 60px
+
 
 .woocommerce-product-gallery
 	display: flex
 	justify-content: space-between
 
-.flex-viewport
-	max-width: 570px
-	width: 100%
-	order: 1
-	cursor: url('../img/cursor.png'), pointer
 
-	img
-		max-width: 100%
-		height: auto
+.woocommerce-mini-cart__empty-message
+	display: none
 
-.flex-control-nav
-	list-style-type: none
-	padding-left: 0
-	margin-right: 30px
+//------------Search-----------
+.header__btns_item--search a ul
+	overflow: visible
 
-	li
-		margin-bottom: 30px
-		transition: all .6s
+.aws-form-btn
+	background-color: $red !important
+	border: none !important
 
-		&:last-child
-			margin-bottom: 0
-
-	img
-		width: 90px
-		height: auto
-		border-radius: 10px
-
-.flex-active
-	border: 1px solid #b7b7b7
+.aws-search-btn_icon
+	svg
+		fill: $accent

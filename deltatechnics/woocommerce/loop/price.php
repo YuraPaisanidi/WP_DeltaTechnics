@@ -24,5 +24,5 @@ global $product;
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
 	<div class="product-cart__price">
-		<p class="price"><?php echo $price_html; ?></p>
+		<p class="price-loop"><?php echo $price_html; ?></p>
 <?php endif; ?>
