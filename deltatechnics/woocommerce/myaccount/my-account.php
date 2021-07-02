@@ -17,14 +17,6 @@
 
 defined( 'ABSPATH' ) || exit; ?>
 
-<div class="profile__top top-bg">
-	<div class="profile__top_container container">
-			<h1 class="profile__title h1">Профиль</h1>
-			<a href="#" class="profile__logout">
-					<img src="img/logout-icon.svg" alt="">
-			</a>
-	</div>
-
 <?php
 /**
  * My Account navigation.
