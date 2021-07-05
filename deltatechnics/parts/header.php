@@ -194,7 +194,7 @@
 			<?php cart_link(); ?><?php the_widget('WC_Widget_Cart', 'title='); ?>
 
 			<div class="header__btns_item header__btns_item--auth">
-				<a href="#">
+				<a href="<?php echo get_home_url(); ?>/my-account/">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg" alt="">
 					<ul>
 						<li><a href="#" class="modal__auth">Войти</a></li>

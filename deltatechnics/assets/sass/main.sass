@@ -877,6 +877,7 @@
 	gap: 15px
 	width: 255px
 	min-height: 385px
+	position: relative
 
 	.product
 		padding: 0 !important
@@ -1206,7 +1207,7 @@
 	max-width: 255px
 	// max-height: 255px
 	width: 100%
-	padding: 18px
+	padding: 18px !important
 	border-radius: 10px
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 	gap: 10px
@@ -1225,39 +1226,41 @@
 		grid-template-columns: 1fr 1fr
 
 	&__btn
-		max-width: 220px
+		min-width: 220px
+		width: 100%
 		height: 50px
 		border: 1px solid #E4E8F1
 		border-radius: 6px
 		display: flex
 		align-items: center
 		padding-left: 15px
-		color: $text !important
+		color: $text
+		+transition
 
 		+r(992)
 			font-size: 14px
 
 		&:hover
 			background-color: $red
-			color: $accent
+			color: $accent !important
 
-		&:last-child
-			padding-right: 15px
-			position: relative
+		// &:last-child
+		// 	padding-right: 15px
+		// 	position: relative
 
-			+r(480)
-				padding-right: 25px
+		// 	+r(480)
+		// 		padding-right: 25px
 
-			&:hover
+			// &:hover
 				
-				&::after
-					content: url(../img/logout-icon-white.png)
+			// 	&::after
+			// 		content: url(../img/logout-icon-white.png)
 					
-			&::after
-				position: absolute
-				content: url(../img/logout-icon-black.png)
-				right: 15px
-				top: 15px
+			// &::after
+			// 	position: absolute
+			// 	content: url(../img/logout-icon-black.png)
+			// 	right: 15px
+			// 	top: 15px
 
 				+r(768)
 					right: 5px
@@ -2724,8 +2727,8 @@
 					font-size: 22px
 
 		&_info
-			margin-bottom: 35px
-			padding-left: 45px
+			// margin-bottom: 35px
+			// padding-left: 45px
 
 			+r(768)
 				width: 100%
@@ -2801,7 +2804,7 @@
 
 		&_password
 			padding-bottom: 35px
-			padding-left: 45px
+			// padding-left: 45px
 
 			+r(768)
 				width: 100%
@@ -2821,11 +2824,15 @@
 			align-items: center
 			justify-content: center
 			border-top: 1px solid #E3E3EC
+			+transition
 
 			+r(480)
 				padding-top: 20px
 
-			a 
+			button
+				width: 100%
+
+			a
 				width: 315px
 				height: 35px
 				background-color: $red
@@ -3116,9 +3123,9 @@
 
 	&__content
 		padding: 30px 0 50px
-		display: grid
-		grid-template-columns: 255px 1fr
-		grid-gap: 30px
+		// display: grid
+		// grid-template-columns: 255px 1fr
+		// grid-gap: 30px
 
 		+r(992)
 			grid-gap: 15px
@@ -4445,7 +4452,6 @@
 	/* ползунок скроллбара */
 	&::-webkit-scrollbar-thumb
 		background-color: $dark
-		// box-shadow: inset 1px 1px 10px #f3faf7
 
 	&::-webkit-scrollbar-thumb:hover
 		background-color: #253861
@@ -4528,6 +4534,17 @@
 	p
 		font-size: 32px !important
 
+.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
+	top: 26px !important
+	left: 200px !important
+
+.tinvwl_add_to_wishlist_button
+	width: 32px !important
+	height: 32px !important
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before, .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before
+	margin-left: -8px
+	content: url(../img/heart.svg)
 //------------------WC Shopping cart-----------
 .shop_table
 	border: none !important
@@ -4684,12 +4701,97 @@
 	svg
 		fill: $accent
 
+.aws-search-result-1
+	&:hover
+		.header__btns_item--search
+			&:hover
+
+
 //--------------WC Profile----------------
 .woocommerce-MyAccount-navigation-link
 	list-style-type: none
 
+.profile__content
+	.woocommerce
+		display: grid
+		grid-template-columns: 255px 1fr
+		grid-gap: 30px
+
+		.woocommerce-MyAccount-content
+			background-color: $accent !important
+			padding: 45px 105px 25px 70px
+			border-radius: 10px
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+
+			.registr__form_info
+				margin-bottom: 35px
+			
+			button
+				color: $accent
+				border: none
+				background-color: transparent
+
+			.wc-address__desc
+				margin-bottom: 20px !important
+
 .profile__menu
 	padding: 0
 
-/* полоса прокрутки (скроллбар) */
-body
+	ul
+		display: flex
+		flex-direction: column
+		gap: 10px
+
+	li
+		display: flex
+		justify-content: center
+
+.woocommerce-Button
+	color: $accent !important
+	background-color: $red !important
+	border-radius: 6px !important
+	+transition
+	
+	&:hover
+		background-color: $dark !important
+
+.woocommerce-Address
+	display: flex
+	flex-direction: column
+	gap: 15px
+
+	.woocommerce-Address-title
+		h3
+			margin-bottom: 10px
+
+		.edit
+			color: $red
+			font-weight: 600
+
+.input-text,
+.select2-selection
+	border-radius: 6px
+	border: 1px solid #e4e8f1 !important
+	padding-left: 10px
+	opacity: .5 !important
+	height: 35px !important
+	line-height: 35px !important
+
+.wc-edit-address-btn__wrapper
+	display: flex
+	align-items: center
+	justify-content: center
+
+.woocommerce-MyAccount-content button
+	color: $accent !important
+	background-color: $red !important
+	width: 315px !important
+	height: 35px !important
+	border-radius: 6px !important
+	+transition
+
+	&:hover
+		background-color: $dark !important
+
+
+
