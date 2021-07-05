@@ -35,20 +35,30 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Опи
 	</p>
 	</div>
 
-	<?php if( have_rows('prop') ): ?>
-		<div class="product-page__prop">
-			<p class="product-page__subtitle">Характеристики</p>
-				<?php while( have_rows('prop') ): the_row(); 
-					$param = get_sub_field('param');
-					$value = get_sub_field('value');
-					?>
-					<div class="product-page__prop_value">
-						<p><?php echo $param; ?></p>
-						<p><?php echo $value; ?></p>
-					</div>
-				<?php endwhile; ?>
-		</div>
-	<?php endif; ?>
+		<?php if( have_rows('info') ): ?>
+			<?php while( have_rows('info') ): the_row(); 
+				$info_block = get_sub_field('info_block');
+				$info_block_name = get_sub_field('info_block_name');
+				?>
+
+				<div class="product-page__prop">
+					<p class="product-page__subtitle"><?php echo $info_block_name; ?></p>
+					<?php if( have_rows('info_block') ): ?>
+						<?php while( have_rows('info_block') ): the_row(); 
+							$par = get_sub_field('par');
+							$val = get_sub_field('val');
+							?>
+							<div class="product-page__prop_value">
+								<p><?php echo $par; ?></p>
+								<p><?php echo $val; ?></p>
+							</div>
+							<?php endwhile; ?>
+						<?php endif; ?>
+			
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+
 
 	<?php if( have_rows('size') ): ?>
 		<div class="product-page__size">

@@ -1572,7 +1572,7 @@
 		position: relative
 		margin-bottom: 15px
 		width: 100%
-					
+
 	&__input
 		width: 100%
 		height: 40px
@@ -1710,6 +1710,7 @@
 				align-items: flex-end
 				justify-content: center
 				color: $accent
+				font-size: 22px
 
 				&:hover
 					color: $accent
@@ -2426,8 +2427,9 @@
 		width: 100%
 		display: grid
 		grid-template-columns: 1fr 1fr
-		grid-template-rows: 225px 350px 1fr
+		// // grid-template-rows: 225px 350px 1fr
 		grid-gap: 30px
+		// grid-template-rows: auto
 		padding-bottom: 60px
 		border-bottom: 1px solid #C6C6D2
 
@@ -2466,21 +2468,21 @@
 		border-radius: 10px
 		max-width: 540px
 		width: 100%
-		max-height: 760px
+		// max-height: 760px
 		padding: 30px 0
-		grid-row-start: 1
-		grid-row-end: 4
+		// grid-row-start: 1
+		// grid-row-end: 4
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 		
 		+r(992)
-			grid-column-start: 1
-			grid-column-end: 3
+			// grid-column-start: 1
+			// grid-column-end: 3
 			width: 100%
 			max-width: 100%
 
 		+r(768)
-			grid-column-start: 1
-			grid-column-end: 1
+			// grid-column-start: 1
+			// grid-column-end: 1
 
 		+r(480)
 			padding: 15px 0
@@ -2531,7 +2533,7 @@
 		max-width: 540px
 		width: 100%
 		padding-top: 25px
-		max-height: 225px
+		// max-height: 225px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
 		+r(992)
@@ -4701,10 +4703,10 @@
 	svg
 		fill: $accent
 
-.aws-search-result-1
-	&:hover
-		.header__btns_item--search
-			&:hover
+.aws-search-result
+	&:hover + .header__btns_item--search
+		background-color: $red
+		
 
 
 //--------------WC Profile----------------
@@ -4793,5 +4795,11 @@
 	&:hover
 		background-color: $dark !important
 
+//----------------WC-Login---------
+.form__forgot-pass
+	position: absolute
+	top: 23%
+	right: 5%
+	color: rgba(250, 223, 130, 1)
 
 
