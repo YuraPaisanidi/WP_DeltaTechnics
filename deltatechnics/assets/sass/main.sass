@@ -754,15 +754,17 @@
 				font-size: 34px
 //-----------------------------
 .footer
-	padding: 45px 0
 	background-color: $dark
-
-	+r(992)
-		padding: 20px 0
 
 	&__container
 		+between
 		max-width: 920px
+		padding-top: 45px
+		padding-bottom: 45px
+
+		+r(992)
+			padding-top: 20px
+			padding-bottom: 20px
 
 		+r(768)
 			justify-content: space-around
@@ -4383,6 +4385,10 @@
 .product
 	width: 100%
 
+.cart
+	display: flex
+	gap: 15px
+
 .single_add_to_cart_button
 	display: flex
 	align-items: center
@@ -4536,17 +4542,6 @@
 	p
 		font-size: 32px !important
 
-.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
-	top: 26px !important
-	left: 200px !important
-
-.tinvwl_add_to_wishlist_button
-	width: 32px !important
-	height: 32px !important
-
-.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before, .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before
-	margin-left: -8px
-	content: url(../img/heart.svg)
 //------------------WC Shopping cart-----------
 .shop_table
 	border: none !important
@@ -4620,6 +4615,7 @@
 	border: none
 	text-align: center
 	font-weight: 600
+	border: none !important
 
 	+r(1200)
 		font-size: 14px
@@ -4803,3 +4799,95 @@
 	color: rgba(250, 223, 130, 1)
 
 
+//----------------WC-Wishlist----------
+.tinv-wishlist
+	background-color: $accent
+	border-radius: 10px
+	box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2)
+		// padding: 20px
+	display: block !important
+
+	.product-name
+		a
+			color: $text
+			font-weight: 600
+
+	.product-price
+		bdi
+			font-weight: 600
+		
+	.product-action
+		height: 35px
+		min-width: 200px
+
+.tinv-header
+	padding: 20px
+
+	h2
+		font-size: 32px
+
+.return-to-shop
+	padding: 20px
+
+.cart-empty
+	margin: 20px
+
+.button
+	background-color: $red !important
+	border-radius: 6px !important
+	color: $accent !important
+	+transition
+
+	&:hover
+		background-color: $dark !important
+	
+.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
+	top: 26px !important
+	left: 200px !important
+	padding: 0 !important
+
+.tinvwl_add_to_wishlist_button
+	width: 35px !important
+	height: 35px !important
+	margin-top: 0 !important
+	transition: .3s !important
+	border-radius: 10px !important
+
+	&:focus,
+	&:active
+		transform: scale(0.8)
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before, .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before
+	margin-left: -8px
+	content: url(../img/heart.svg)
+
+.tinvwl-after-add-to-cart
+	width: 35px !important
+	height: 35px !important
+	display: flex !important
+	align-items: center !important
+	justify-content: center !important
+
+.tinvwl-product-make-remove
+	background-color: $bgColor !important
+
+//------------Shopping cart quantity---
+.qty
+	background-color: transparent
+	width: 47px !important
+	height: 42px !important
+	text-align: center
+	font-weight: 600
+	border: none !important
+	opacity: 1 !important
+	padding: 0 !important
+
+	+r(1200)
+		font-size: 14px
+
+	+r(480)
+		font-size: 12px
+
+
+.wp-wrapper
+	min-height: calc(100vh-var(--footer-height))

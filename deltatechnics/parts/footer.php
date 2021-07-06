@@ -28,14 +28,16 @@
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
-		
+
 	</div>
+
+	<div class="copyright">
+		<div class="copyright__container container">
+			<p>© Copyright 2021 | Delta Technics</p>
+			<a href="<?php echo get_home_url(); ?>/privacy-policy/">Конфиденциальность</a>
+			<a href="<?php echo get_home_url(); ?>/uslovija-polzovanija/">Условия пользования</a>
+		</div>
+	</div>
+
 </footer>
 
-<section class="copyright">
-	<div class="copyright__container">
-		<p>© Copyright 2021 | Delta Technics</p>
-		<a href="<?php echo get_home_url(); ?>/privacy-policy/">Конфиденциальность</a>
-		<a href="<?php echo get_home_url(); ?>/uslovija-polzovanija/">Условия пользования</a>
-	</div>
-</section>

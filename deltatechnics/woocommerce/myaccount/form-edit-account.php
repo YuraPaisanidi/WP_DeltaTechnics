@@ -55,17 +55,18 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 			<p><?php esc_html_e( 'Пароль', 'woocommerce' ); ?></p>
 		</div>
 		<div class="registr__form_inputs--pass">
-			<input type="password" name="password" name="password_current" placeholder=" Введіть старий пароль" autocomplete="off">
+				<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current" autocomplete="off" />
+
 			<!-- <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="password_current"><?php esc_html_e( 'Current password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>
 				<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current" autocomplete="off" />
 			</p> -->
-			<input type="password" name="password_1" id="password_1" placeholder="Ввеіть новий пароль" autocomplete="off">
+			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1" autocomplete="off" />
 			<!-- <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="password_1"><?php esc_html_e( 'New password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>
 				<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1" autocomplete="off" />
 			</p> -->
-			<input type="password" name="password_2" id="password_2" placeholder="Введіть старий пароль ще раз" autocomplete="off">
+			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
 			<!-- <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="password_2"><?php esc_html_e( 'Confirm new password', 'woocommerce' ); ?></label>
 				<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
