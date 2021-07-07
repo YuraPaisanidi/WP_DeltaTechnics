@@ -8,7 +8,7 @@
 
 <div class="profile__top top-bg">
 		<div class="profile__top_container container">
-				<h1 class="profile__title h1"><?php the_title(); ?></h1>
+				<h1 class="profile__title h1">Профіль</h1>
 				<a href="#" class="profile__logout">
 						<img src="img/logout-icon.svg" alt="">
 				</a>
@@ -16,11 +16,16 @@
 </div>
 
 <div class="profile__container container">
-	<div class="profile__content">
+
+	<div class="favorite__subtitle">
+			<p><?php the_title(); ?></p>
+	</div>
+
+	<div class="profile__content wishlist__content">
 				<?php 
 				wp_nav_menu( array(
 				'menu'=>'profile',
-				'menu_class'=>'list',
+				'menu_class'=>'profile__menu',
 				'theme_location'=>'profile',
 				) );
 				?>

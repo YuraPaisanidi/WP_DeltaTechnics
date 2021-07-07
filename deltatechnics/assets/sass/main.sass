@@ -4671,6 +4671,9 @@
 .woocommerce-notices-wrapper
 	position: absolute
 
+	a
+		color: $red !important
+
 //-----------Related------
 .columns-4
 	grid-template-columns: 1fr 1fr 1fr 1fr
@@ -4733,7 +4736,14 @@
 				margin-bottom: 20px !important
 
 .profile__menu
-	padding: 0
+	padding: 18px
+	display: flex
+	flex-direction: column
+	gap: 10px
+	background-color: $accent
+	border-radius: 10px
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02);
+
 
 	ul
 		display: flex
@@ -4743,6 +4753,33 @@
 	li
 		display: flex
 		justify-content: center
+
+	.menu-item
+		min-width: 220px
+		width: 100%
+		height: 50px
+		border: 1px solid #E4E8F1
+		border-radius: 6px
+		padding-left: 15px
+		background-color: $accent
+		+transition
+
+		&:hover
+			background-color: $red
+
+		a
+			display: flex
+			align-items: center
+			color: $text
+			height: 100%
+			width: 100%
+
+			+r(992)
+				font-size: 14px
+
+			&:hover
+				color: $accent
+
 
 .woocommerce-Button
 	color: $accent !important
@@ -4798,14 +4835,37 @@
 	right: 5%
 	color: rgba(250, 223, 130, 1)
 
+.show-password-input
+	display: none
 
+.woocommerce-form
+	position: absolute
+	top: 45%
+	left: 50%
+	transform: translate(-50%, -50%)
 //----------------WC-Wishlist----------
+.wishlist__content
+	padding: 30px 0 50px
+	display: grid
+	grid-template-columns: 255px 1fr
+	grid-gap: 30px
+
 .tinv-wishlist
 	background-color: $accent
 	border-radius: 10px
 	box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2)
-		// padding: 20px
 	display: block !important
+
+	form
+		padding: 20px
+
+	thead
+		display: none
+
+	.product-thumbnail
+
+		.attachment-woocommerce_thumbnail
+			border-radius: 6px
 
 	.product-name
 		a
@@ -4821,7 +4881,7 @@
 		min-width: 200px
 
 .tinv-header
-	padding: 20px
+	display: none
 
 	h2
 		font-size: 32px
@@ -4840,7 +4900,7 @@
 
 	&:hover
 		background-color: $dark !important
-	
+
 .tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
 	top: 26px !important
 	left: 200px !important
