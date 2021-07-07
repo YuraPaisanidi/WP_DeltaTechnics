@@ -64,15 +64,8 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 			<div class="modal__links">
 				<h3 class="form__title">Увійти за допомогою</h3>
-				<a href="#" class="modal__links_item--gg">
-					<p>Продовжити з Google</p>
-				</a>
-				<a href="#" class="modal__links_item--fb">
-					<p>Продовжити з Facebook</p>
-				</a>
-				<a href="#" class="modal__links_item--apple">
-					<p>Продовжити з Apple</p>
-				</a>
+				<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
+				<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
 			</div>
 
 		</form>

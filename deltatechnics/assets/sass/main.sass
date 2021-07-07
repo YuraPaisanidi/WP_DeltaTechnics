@@ -1501,19 +1501,19 @@
 			font-weight: 600
 
 		a
-			width: 100%
-			height: 40px
-			background-color: #000
-			border-radius: 6px
-			display: flex
-			align-items: center
-			padding-left: 60px
+			// width: 100%
+			// height: 40px
+			// background-color: #000
+			// border-radius: 6px
+			// display: flex
+			// align-items: center
+			// padding-left: 60px
 			
-			+r(768)
-				max-width: 305px
+			// +r(768)
+			// 	max-width: 305px
 
-			&:hover
-				background-color: $red
+			// &:hover
+			// 	background-color: $red
 
 				
 			p 
@@ -1533,6 +1533,8 @@
 
 			&--gg
 				margin-bottom: 8px
+				// border-radius: 6px !important
+				// display: flex !important
 
 				p
 
@@ -4843,6 +4845,10 @@
 	top: 45%
 	left: 50%
 	transform: translate(-50%, -50%)
+
+	.nsl-container
+		width: 100% !important
+		box-shadow: 0 1px 5px 0 rgb(0 0 0 / 25%) !important
 //----------------WC-Wishlist----------
 .wishlist__content
 	padding: 30px 0 50px
@@ -4951,3 +4957,4 @@
 
 .wp-wrapper
 	min-height: calc(100vh-var(--footer-height))
+
