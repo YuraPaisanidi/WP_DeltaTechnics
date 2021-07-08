@@ -22,10 +22,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+<script>
+		$('.tabs__wrap').hide();
+	$('.tabs__wrap:first').show();
+	$('.tabs ul a:first').addClass('active');
+		$('.tabs ul a').click(function(event){
+		event.preventDefault();
+		$('.tabs ul a').removeClass('active');
+		$(this).addClass('active');
+		$('.tabs__wrap').hide();
+			var selectTab = $(this).attr('href');
+		$(selectTab).fadeIn();
+	});
+</script>
+	<ul>
+  <li><a href="#one">Колледж</a></li>
+  <li><a href="#two">Высшее бакалавриат</a></li>
+  <li><a href="#three">Высшее магистратура</a></li>
+  <li><a href="#four">Профессиональная переподготовка</a></li>
+  <li><a href="#five">Повышение квалификации</a></li>
+</ul>
+ <div id="one" class="tabs__wrap">1</div>
+<div id="two" class="tabs__wrap">2</div>
+<div id="three" class="tabs__wrap">2=3</div>
+<div id="four" class="tabs__wrap">4</div>
+<div id="five" class="tabs__wrap">5</div>
 
-<div class="u-columns col2-set" id="customer_login">
+<div class="class-wrapper"></div>
+<div class="login-tabs" id="customer_login">
 
-	<div class="u-column1 col-1">
+	<div class="login-tabs__wrap">
 
 <?php endif; ?>
 
@@ -54,7 +80,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 					<button type="submit" class="form__btn_button" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Увійти', 'woocommerce' ); ?></button>
 				</div>
 
-				<div class="form__btn">
+				<div class="form__btn form__btn-item">
 					<button type="submit" class="form__btn_button--reg" name="registr">Реєстрація</button>
 				</div>
 
@@ -70,10 +96,11 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 		</form>
 
+	<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
 	</div>
 
-	<div class="u-column2 col-2">
+	<div class="login-tabs__wrap">
 
 		<!-- <h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2> -->
 
@@ -117,6 +144,10 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 					<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit form__btn_button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
 				</p>
 
+				<div class="form__btn form__btn-item">
+					<button type="submit" class="form__btn_button--reg" name="registr">Увійти</button>
+				</div>
+
 				<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 			</div>
@@ -131,6 +162,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 	</div>
 
+	<?php endif; ?>
 </div>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>
