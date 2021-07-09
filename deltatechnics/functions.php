@@ -45,14 +45,14 @@
 	remove_action('wp_head','rsd_link');  // сервис Really Simple Discovery
 	remove_action('wp_head','wlwmanifest_link'); // Windows Live Writer
 	remove_action('wp_head','wp_generator');  // скрыть версию wordpress
-	// add_action( 'init', 'true_jquery_register' );
-	// function true_jquery_register() {
-	// 	if ( !is_admin() ) {
-	// 		wp_deregister_script( 'jquery' );
-	// 		wp_register_script( 'jquery', ( get_template_directory_uri() . '/assets/libs/jquery.min.js' ), false, null, true );
-	// 		wp_enqueue_script( 'jquery' );
-	// 	}
-	// }
+	add_action( 'init', 'true_jquery_register' );
+	function true_jquery_register() {
+		if ( !is_admin() ) {
+			wp_deregister_script( 'jquery' );
+			wp_register_script( 'jquery', ( get_template_directory_uri() . '/assets/libs/jquery.min.js' ), false, null, true );
+			wp_enqueue_script( 'jquery' );
+		}
+	}
 
 
 //------------------меню----------------------

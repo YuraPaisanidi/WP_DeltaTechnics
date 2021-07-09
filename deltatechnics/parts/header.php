@@ -35,7 +35,16 @@
 
 			<div class="header__nav_accord">
 
-				<div class="accordion">
+
+				<!-- <?php 
+					wp_nav_menu( array(
+						'menu'=>'menu',
+						'menu_class'=>'header__nav_menu',
+						'theme_location'=>'menu',
+						) );
+				?> -->
+
+				<!-- <div class="accordion">
 					<div class="accordion__header">
 						<a href="#">Зброя</a>
 						<span></span>
@@ -154,7 +163,7 @@
 							Спорядження 4
 						</a>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 
@@ -210,7 +219,7 @@
 				<a href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/flag-ua.svg" alt="">
 					<ul>
-						<li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/flag-ua.svg" alt=""></li>
+						<li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/flag-en.svg" alt=""></li>
 					</ul>
 				</a>
 			</div>

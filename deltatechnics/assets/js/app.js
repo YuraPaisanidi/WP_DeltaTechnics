@@ -271,5 +271,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		};
 		accordions('.accordion');
-
 });

@@ -329,7 +329,8 @@
 			gap: 35px
 
 			+r(1200)
-				display: none
+				// display: none
+				flex-direction: column
 
 			ul
 				+between
@@ -340,6 +341,9 @@
 				a
 					color: $accent
 					position: relative
+
+					+r(1200)
+						font-size: 20px
 
 					&::after
 						content: url(../img/dropdown-arrow.svg)
@@ -617,7 +621,7 @@
 					position: absolute
 					top: 90%
 					left: 0
-					width: 120px
+					min-width: 150px
 					display: flex
 					flex-direction: column
 					justify-content: space-between
@@ -627,7 +631,7 @@
 					visibility: hidden
 					opacity: 0
 					overflow: auto
-					padding: 10px
+					padding: 10px 15px
 					border-radius: 5px
 
 					a
@@ -1095,6 +1099,7 @@
 	bdi
 		display: flex
 		word-wrap: break-word !important
+		align-items: center
 
 		.woocommerce-Price-currencySymbol
 			background-color: transparent
@@ -1215,7 +1220,7 @@
 	display: flex
 	flex-direction: column
 	max-width: 255px
-	// max-height: 255px
+	max-height: 385px
 	width: 100%
 	padding: 18px !important
 	border-radius: 10px
@@ -1223,20 +1228,11 @@
 	gap: 10px
 	background-color: $accent
 
-	+r(992)
-		max-width: 220px
-
 	+r(768)
 		max-width: 100%
 		width: 100%
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr 1fr
-
-	+r(568)
-		grid-template-columns: 1fr 1fr
 
 	&__btn
-		min-width: 220px
 		width: 100%
 		height: 50px
 		border: 1px solid #E4E8F1
@@ -2285,25 +2281,25 @@
 		+r(480)
 			padding: 10px
 
-		&_main
-			max-width: 455px
-			width: 100%
-			position: relative
-			height: 100%
+		// &_main
+		// 	max-width: 455px
+		// 	width: 100%
+		// 	position: relative
+		// 	height: 100%
 
-			+r(1200)
-				max-width: 350px
+		// 	+r(1200)
+		// 		max-width: 350px
 
-			+r(992)
-				max-width: 75%
+		// 	+r(992)
+		// 		max-width: 75%
 
-			+r(576)
-				width: 100%
-				max-width: 100%
+		// 	+r(576)
+		// 		width: 100%
+		// 		max-width: 100%
 
-			img
-				object-fit: cover
-				width: 100%
+		// 	img
+		// 		object-fit: cover
+		// 		width: 100%
 
 		&_3d
 			position: absolute
@@ -2363,7 +2359,7 @@
 		+r(1200)
 			max-width: 100%
 			width: 100%
-			padding: 0px 30px 30px 30px
+			// padding: 0px 30px 30px 30px
 			height: auto
 
 		+r(480)
@@ -2391,7 +2387,7 @@
 		
 		+r(992)
 			flex-direction: row
-			padding: 0px 30px
+			// padding: 0px 30px
 
 		+r(768)
 			flex-direction: column
@@ -2761,11 +2757,12 @@
 			grid-template-columns: 1fr 1fr
 			grid-gap: 20px
 
-			+r(768)
+			+r(992)
 				grid-template-columns: 1fr
 
 			input
-				width: 315px
+				max-width: 315px
+				width: 100%
 				height: 35px
 				line-height: 35px
 				border-radius: 6px
@@ -2773,19 +2770,20 @@
 				padding-left: 10px
 				opacity: 0.5
 
-				+r(768)
-					width: 100%
+				+r(992)
+					max-width: 100%
 
 			&--pass
 				display: grid
 				grid-template-columns: 1fr 1fr
 				grid-gap: 20px
 
-				+r(768)
+				+r(992)
 					grid-template-columns: 1fr
 
 				input
-					width: 315px
+					max-width: 315px
+					width: 100%
 					height: 35px
 					line-height: 35px
 					border-radius: 6px
@@ -2793,13 +2791,14 @@
 					padding-left: 10px
 					opacity: 0.5
 
-					+r(768)
-						width: 100%
+					+r(992)
+						max-width: 100%
 
 				.registr__form_btn
 					background-color: $red
 					border: none
-					width: 315px
+					max-width: 315px
+					width: 100%
 					height: 35px
 					border-radius: 6px
 					padding: 0
@@ -2809,10 +2808,8 @@
 						width: 270px
 
 					+r(992)
-						width: 240px
-
-					+r(768)
 						width: 100%
+						justify-self: center
 
 					&:hover
 						background-color: $dark
@@ -2820,18 +2817,11 @@
 
 		&_password
 			padding-bottom: 35px
-			// padding-left: 45px
 
-			+r(768)
+			+r(992)
 				width: 100%
-				display: flex
-				flex-direction: column
-				padding-right: 45px
+				padding-bottom: 0
 
-			+r(480)
-				padding-left: 20px
-				padding-right: 20px
-				padding-bottom: 20px
 
 		&_btn
 			padding-top: 25px
@@ -3158,16 +3148,16 @@
 		.registr__form
 			max-width: 100%
 
-			input
+			// input
 
-				+r(1200)
-					width: 270px
+			// 	+r(1200)
+			// 		width: 270px
 
-				+r(992)
-					width: 240px
+			// 	+r(992)
+			// 		width: 240px
 
-				+r(768)
-					width: 100%
+			// 	+r(768)
+			// 		width: 100%
 
 //------------------SHOPPING-CART------------
 .shopping-cart
@@ -4288,6 +4278,8 @@
 
 	+r(768)
 		grid-template-columns: 1fr
+		grid-gap: 20px
+		padding-top: 25px
 
 .products
 	display: grid
@@ -4296,6 +4288,9 @@
 
 	+r(1200)
 		grid-template-columns: 1fr 1fr
+
+	+r(768)
+		grid-gap: 20px
 
 	+r(480)
 		grid-template-columns: 1fr
@@ -4459,16 +4454,24 @@
 	+r(1200)
 		margin-bottom: 20px
 
+	+r(768)
+		height: 300px !important
+
+	+r(576)
+		flex-direction: column-reverse
+
 .flex-viewport
-	max-width: 455px !important
-	margin-right: 15px
+	max-width: 455px
 	width: 100%
+	margin-right: 15px
 	order: 1
 	cursor: url('../img/cursor.png'), pointer
+	border-radius: 10px
+	max-height: 355px
+
 
 	img
 		max-width: 100%
-		width: 100%
 		height: auto
 
 .flex-control-nav
@@ -4506,10 +4509,15 @@
 
 
 	li
-		margin-bottom: 12px !important
-		width: 125px !important
-		height: 80px !important
+		margin-bottom: 12px
+		width: 125px
+		height: 80px
 		transition: all .6s
+
+		+r(576)
+			margin-bottom: 5px
+			width: 65px
+			height: 45px
 
 		&:last-child
 			margin-bottom: 0
@@ -4520,6 +4528,7 @@
 		height: 100% !important
 		border-radius: 7px !important
 
+
 .flex-active
 	border: 1px solid #b7b7b7
 
@@ -4529,25 +4538,8 @@
 	border-right: 1px solid rgba(0, 0, 0,0.1)
 	margin: 0
 
-	+r(992)
-		width: 100%
-
-	+r(480)
-		padding: 10px
-
-.woocommerce-product-gallery__image
-	height: 100%
-	width: 455px !important
-	border-radius: 10px
-	position: relative
-
-
 .woocommerce-product-gallery__trigger
 	display: none
-
-.wp-post-image
-	width: 455px !important
-	height: 355px !important
 
 .price
 	display: flex
@@ -4573,9 +4565,15 @@
 .shop_table
 	border: none !important
 	border-spacing: 0 30px
+	
+	tbody
+		width: 100%
 
 .woocommerce table.shop_table td
 	border: none
+	
+	&::before
+		display: none
 
 .cart_item
 	background-color: $accent
@@ -4732,24 +4730,30 @@
 .aws-search-result
 	&:hover + .header__btns_item--search
 		background-color: $red
-		
-
 
 //--------------WC Profile----------------
 .woocommerce-MyAccount-navigation-link
 	list-style-type: none
 
 .profile__content
-	.woocommerce
+
+	.profile-wrapper
 		display: grid
 		grid-template-columns: 255px 1fr
 		grid-gap: 30px
+
+		+r(768)
+			grid-gap: 20px
+			grid-template-columns: 1fr
 
 		.woocommerce-MyAccount-content
 			background-color: $accent !important
 			padding: 45px 105px 25px 70px
 			border-radius: 10px
 			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+
+			+r(992)
+				padding: 30px
 
 			.registr__form_info
 				margin-bottom: 35px
@@ -4763,23 +4767,35 @@
 				margin-bottom: 20px !important
 
 .profile__menu
-	padding: 18px
-	display: flex
-	flex-direction: column
-	gap: 10px
-	background-color: $accent
-	border-radius: 10px
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02);
-
 
 	ul
 		display: flex
 		flex-direction: column
 		gap: 10px
 
+		+r(768)
+			display: grid
+			grid-template-columns: 1fr 1fr !important
+
 	li
 		display: flex
 		justify-content: center
+
+		&:last-child
+			position: relative
+
+			&:hover
+				
+				&::after
+					content: url(../img/logout-icon-white.png)
+					+transition
+					
+			&::after
+				position: absolute
+				content: url(../img/logout-icon-black.png)
+				right: 15px
+				top: 15px
+				+transition
 
 	.menu-item
 		min-width: 220px
@@ -4844,17 +4860,6 @@
 	align-items: center
 	justify-content: center
 
-.woocommerce-MyAccount-content button
-	color: $accent !important
-	background-color: $red !important
-	width: 315px !important
-	height: 35px !important
-	border-radius: 6px !important
-	+transition
-
-	&:hover
-		background-color: $dark !important
-
 //----------------WC-Login---------
 .form__forgot-pass
 	position: absolute
@@ -4869,9 +4874,6 @@
 	padding-left: 10px
 	display: flex
 	align-items: center
-
-// .input-text, .select2-selection
-// 	padding: 0
 
 .show-password-input
 	display: none
@@ -5009,3 +5011,21 @@
 .wp-wrapper
 	min-height: calc(100vh-var(--footer-height))
 
+.woocommerce-error
+	padding-left: 50px
+
+//------------Checkout-------------------------
+.woocommerce-billing-fields__field-wrapper,
+.woocommerce-additional-fields__field-wrapper,
+.woocommerce-checkout-review-order
+	background-color: #fff
+	padding: 20px
+	border-radius: 10px
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+
+	textarea
+		height: 200px !important;
+		resize: none;
+
+	.col2-set
+		margin-bottom: 30px
