@@ -22,9 +22,9 @@
 			$img = get_sub_field('img');
 			$url = get_sub_field('url');
 			?>
-			<div class="clothes__menu_item" style="background-image: url(<?php echo $img; ?>);">
-				<h3 class="h3"><a href="<?php echo $url; ?>"><?php echo $name; ?></a></h3>
-			</div>
+			<a href="<?php echo $url; ?>" class="clothes__menu_item" style="background-image: url(<?php echo $img; ?>);">
+				<h3 class="h3"><span><p><?php echo $name; ?></p></span></h3>
+			</a>
 
 		<?php endwhile; ?>
 	<?php endif; ?>

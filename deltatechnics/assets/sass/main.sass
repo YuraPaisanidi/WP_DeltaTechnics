@@ -288,6 +288,7 @@
 	min-height: 70px
 	padding: 15px 0
 	z-index: 1000
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
 	&__container
 		+between
@@ -355,7 +356,6 @@
 					&:hover
 						color: $accent
 
-
 				ul
 					position: absolute
 					top: 90%
@@ -373,7 +373,6 @@
 					overflow: auto
 
 					+r(1200)
-						min-height: 200px
 						padding: 10px 10px
 
 					li
@@ -396,13 +395,6 @@
 							&::before, &::after
 								display: none
 
-							&:hover,
-							&:focus
-								background-color: $dark
-								border-radius: 20px
-								color: $red
-								font-weight: bold
-
 				&:hover,
 				&:focus
 					ul
@@ -415,7 +407,7 @@
 							right: 65%
 
 		&_accord
-			display: none			
+			display: none
 
 			+r(1200)
 				display: block
@@ -494,8 +486,32 @@
 		transition: 0.5s
 		background-color: $dark
 		row-gap: 25px
-		width: 80%
+		max-width: 420px
 		overflow: auto
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+
+		li
+			position: relative
+
+			ul
+				position: absolute
+				top: 25px !important
+				left: 0 !important
+				background-color: $bgColor !important
+				border-radius: 10px
+				box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
+				z-index: 1
+
+				.menu-item
+					width: 100%
+					border-bottom: 1px solid transparent
+					+transition
+
+					&:hover
+						border-bottom: 1px solid lighten($dark, 70% )
+
+					a
+						color: $text !important
 
 	&__btns
 		+between
@@ -1247,32 +1263,7 @@
 			font-size: 14px
 
 		&:hover
-			background-color: $red
-			color: $accent !important
-
-		// &:last-child
-		// 	padding-right: 15px
-		// 	position: relative
-
-		// 	+r(480)
-		// 		padding-right: 25px
-
-			// &:hover
-				
-			// 	&::after
-			// 		content: url(../img/logout-icon-white.png)
-					
-			// &::after
-			// 	position: absolute
-			// 	content: url(../img/logout-icon-black.png)
-			// 	right: 15px
-			// 	top: 15px
-
-				+r(768)
-					right: 5px
-
-				+r(480)
-					right: 15px
+			background-color: $bgColor
 //-----------------------MAP-------------------
 .map
 	max-width: 730px
@@ -1403,6 +1394,9 @@
 				background-color: $red
 
 // -----MODAL-----
+.log-active
+	display: flex !important
+
 .modal
 	display: flex
 	visibility: hidden
@@ -1442,6 +1436,7 @@
 		// transform: translate(0, -150px)
 		border-radius: 10px
 		align-items: flex-start
+		display: none
 		+transition
 		
 		&::after
@@ -1536,8 +1531,6 @@
 
 			&--gg
 				margin-bottom: 8px
-				// border-radius: 6px !important
-				// display: flex !important
 
 				p
 
@@ -1617,6 +1610,8 @@
 			width: 100%
 			height: 42px
 			border-radius: 6px
+			font-size: 14px !important
+			font-weight: 400 !important
 			background-color: $red
 			color: $accent
 			outline: none
@@ -1634,6 +1629,10 @@
 				border-radius: 6px
 				outline: none
 				border: none
+				display: flex
+				justify-content: center
+				align-items: center
+				cursor: pointer
 
 				&:hover
 					background-color: darken($bgColor,10% )
@@ -1687,9 +1686,11 @@
 			padding: 25px 15px
 
 		&_item
+			display: flex
+			align-items: flex-end
+			justify-content: center
 			height: 260px
 			background-size: cover
-			padding-bottom: 30px
 			border-radius: 10px
 			box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.1)
 			+transition
@@ -1708,19 +1709,18 @@
 
 			h3
 				width: 100%
-				height: 100%
+			
+			span
 
-			a
-				height: 100%
-				width: 100%
-				display: flex
-				align-items: flex-end
-				justify-content: center
-				color: $accent
-				font-size: 22px
+				p
+					width: 100%
+					background-color: rgba(238, 240, 245, 0.5)
+					text-align: center
+					color: $dark
+					font-size: 22px
+					font-weight: 600
+					padding: 10px 0
 
-				&:hover
-					color: $accent
 
 //--------------KIT----------------------
 .kit
@@ -4656,6 +4656,18 @@
 	border: none
 	border-radius: 5px
 	z-index: 100
+	display: flex
+	flex-direction: column-reverse
+	gap: 10px
+	align-items: center
+	text-align: center
+
+	.woocommerce-button
+		width: 50%
+		align-items: center
+
+	&::before
+		display: none
 
 	.restore-item
 		color: $red
@@ -4706,11 +4718,9 @@
 .related
 	padding-bottom: 60px
 
-
 .woocommerce-product-gallery
 	display: flex
 	justify-content: space-between
-
 
 .woocommerce-mini-cart__empty-message
 	display: none
@@ -4784,12 +4794,6 @@
 		&:last-child
 			position: relative
 
-			&:hover
-				
-				&::after
-					content: url(../img/logout-icon-white.png)
-					+transition
-					
 			&::after
 				position: absolute
 				content: url(../img/logout-icon-black.png)
@@ -4860,6 +4864,10 @@
 	align-items: center
 	justify-content: center
 
+.is-active
+	.profile-menu__btn
+		background-color: $red
+		color: $accent
 //----------------WC-Login---------
 .form__forgot-pass
 	position: absolute
@@ -4948,29 +4956,23 @@
 		background-color: $dark !important
 
 .tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
-	top: 26px !important
-	left: 200px !important
+	top: 25px !important
+	left: 0 !important
+	right: 25px !important
 	padding: 0 !important
+	height: 36px
+	width: 36px
 
-	+r(768)
-		top: 25px !important
-		left: 207px !important
+	// +r(768)
+	// 	top: 25px !important
+	// 	left: 207px !important
 
-	+r(576)
-		top: 50% !important
-		left: 50% !important
-		transform: translate(-50%, -50%) !important
+	// +r(576)
+	// 	top: 50% !important
+	// 	left: 50% !important
+	// 	transform: translate(-50%, -50%) !important
 
 .tinvwl_add_to_wishlist_button
-	width: 35px !important
-	height: 35px !important
-	margin-top: 0 !important
-	transition: .3s !important
-	border-radius: 10px !important
-
-	+r(768)
-		width: 30px !important
-		height: 30px !important
 
 	&:focus,
 	&:active

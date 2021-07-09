@@ -241,34 +241,27 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		forms('.form');
 
-	//------------------------------ACCORDIONS---------------------------
-		const accordions = (accordionSelector) => {
-			const	accordion = document.querySelectorAll(accordionSelector);
+	//------------------------------TABS---------------------------
+		  
+	let loginTab = document.getElementById('login-form-show');
+	let regTab = document.getElementById('reg-form-show');
+	let loginTabContent = document.getElementById('login-form');
+	let regTabContent = document.getElementById('reg-form');
+	
+	function showLogin () {
+		loginTabContent.classList.add('log-active');
+		regTabContent.classList.remove('log-active');
+		console.log('2');
+	}
+	function showReg () {
+		loginTabContent.classList.remove('log-active');
+		regTabContent.classList.add('log-active');
+		console.log('1');
 
-			accordion.forEach(item => {
-				const accordionClick = item.querySelector('.accordion__header'),
-							accordionContent = item.querySelector('.accordion__content');
+	}
 
-				accordionClick.addEventListener('click', (e) => {
-					if(!item.classList.contains('accordion--active')) {
+	loginTab.addEventListener('click', showLogin);
+	regTab.addEventListener('click', showReg);
 
-						item.classList.add('accordion--active')
-						accordionContent.style.height = "auto"
-						var height = accordionContent.clientHeight + "px"
-						accordionContent.style.height = "0px"
 
-						setTimeout(() => {
-							accordionContent.style.height = height
-						}, 0)
-
-						} else {
-							accordionContent.style.height = "0px"
-								item.classList.remove('accordion--active')
-					}
-
-				});
-			});
-
-		};
-		accordions('.accordion');
 });

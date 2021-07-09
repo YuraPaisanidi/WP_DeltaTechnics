@@ -22,145 +22,111 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-<script>
-		$('.tabs__wrap').hide();
-	$('.tabs__wrap:first').show();
-	$('.tabs ul a:first').addClass('active');
-		$('.tabs ul a').click(function(event){
-		event.preventDefault();
-		$('.tabs ul a').removeClass('active');
-		$(this).addClass('active');
-		$('.tabs__wrap').hide();
-			var selectTab = $(this).attr('href');
-		$(selectTab).fadeIn();
-	});
-</script>
-	<ul>
-  <li><a href="#one">Колледж</a></li>
-  <li><a href="#two">Высшее бакалавриат</a></li>
-  <li><a href="#three">Высшее магистратура</a></li>
-  <li><a href="#four">Профессиональная переподготовка</a></li>
-  <li><a href="#five">Повышение квалификации</a></li>
-</ul>
- <div id="one" class="tabs__wrap">1</div>
-<div id="two" class="tabs__wrap">2</div>
-<div id="three" class="tabs__wrap">2=3</div>
-<div id="four" class="tabs__wrap">4</div>
-<div id="five" class="tabs__wrap">5</div>
-
-<div class="class-wrapper"></div>
-<div class="login-tabs" id="customer_login">
-
-	<div class="login-tabs__wrap">
 
 <?php endif; ?>
 
-		<!-- <h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2> -->
+	<!-- <h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2> -->
 
-		<form class="woocommerce-form woocommerce-form-login login modal__form" method="post">
+	<form class="woocommerce-form woocommerce-form-login login modal__form log-active" method="post" id="login-form">
 
-			<?php do_action( 'woocommerce_login_form_start' ); ?>
+		<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<div class="modal__login">
-				<h3 class="form__title"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h3>
+		<div class="modal__login">
+			<h3 class="form__title"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h3>
 
-				<div class="form__item">
-					<input id="formMail" type="email" name="username" id="username" placeholder="Введіть email" class="form__input _req _email" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-				</div>
-
-				<div class="form__item">
-					<input id="formPass" type="password" name="password" id="password" placeholder="Введіть пароль" class="form__input form__input--lock _req _pass" autocomplete="current-password">
-					<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="form__forgot-pass"><?php esc_html_e( 'Забули?', 'woocommerce' ); ?></a>
-				</div>
-
-				<?php do_action( 'woocommerce_login_form' ); ?>
-
-				<div class="form__btn">
-					<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-					<button type="submit" class="form__btn_button" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Увійти', 'woocommerce' ); ?></button>
-				</div>
-
-				<div class="form__btn form__btn-item">
-					<button type="submit" class="form__btn_button--reg" name="registr">Реєстрація</button>
-				</div>
-
-				<?php do_action( 'woocommerce_login_form_end' ); ?>
-
+			<div class="form__item">
+				<input id="formMail" type="email" name="username" id="username" placeholder="Введіть email" class="form__input _req _email" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 			</div>
 
-			<div class="modal__links">
-				<h3 class="form__title">Увійти за допомогою</h3>
-				<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
-				<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
+			<div class="form__item">
+				<input id="formPass" type="password" name="password" id="password" placeholder="Введіть пароль" class="form__input form__input--lock _req _pass" autocomplete="current-password">
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="form__forgot-pass"><?php esc_html_e( 'Забули?', 'woocommerce' ); ?></a>
 			</div>
 
-		</form>
+			<?php do_action( 'woocommerce_login_form' ); ?>
+
+			<div class="form__btn">
+				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
+				<button type="submit" class="form__btn_button" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Увійти', 'woocommerce' ); ?></button>
+			</div>
+
+			<div class="form__btn form__btn-item form__btn_button--reg" id="reg-form-show">
+				<span>Реєстрація</span>
+			</div>
+
+			<?php do_action( 'woocommerce_login_form_end' ); ?>
+
+		</div>
+
+		<div class="modal__links">
+			<h3 class="form__title">Увійти за допомогою</h3>
+			<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
+			<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
+		</div>
+
+	</form>
 
 	<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
-	</div>
 
-	<div class="login-tabs__wrap">
+	<!-- <h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2> -->
 
-		<!-- <h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2> -->
+	<form method="post" class="woocommerce-form woocommerce-form-register register modal__form" <?php do_action( 'woocommerce_register_form_tag' ); ?> id="reg-form">
+		<div class="modal__login">
+			<h3 class="form__title"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h3>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register register modal__form" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
-			<div class="modal__login">
-				<h3 class="form__title"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h3>
+			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-				<?php do_action( 'woocommerce_register_form_start' ); ?>
-
-				<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
-
-					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form__item">
-						<!-- <label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
-						<input type="text" class="form__input woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Username', 'woocommerce' ); ?>" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-					</p>
-
-				<?php endif; ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form__item">
-					<!-- <label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
-					<input type="email" class="form__input woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Email address', 'woocommerce' ); ?>" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+					<!-- <label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
+					<input type="text" class="form__input woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Username', 'woocommerce' ); ?>" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 				</p>
 
-				<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+			<?php endif; ?>
 
-					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form__item">
-						<!-- <label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
-						<input type="password" class="form__input form__input--lock woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Password', 'woocommerce' ); ?>" name="password" id="reg_password" autocomplete="new-password" />
-					</p>
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form__item">
+				<!-- <label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
+				<input type="email" class="form__input woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Email address', 'woocommerce' ); ?>" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+			</p>
 
-				<?php else : ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
-					<p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
-
-				<?php endif; ?>
-
-				<?php do_action( 'woocommerce_register_form' ); ?>
-
-				<p class="woocommerce-form-row form-row form__btn">
-					<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-					<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit form__btn_button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
+				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form__item">
+					<!-- <label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label> -->
+					<input type="password" class="form__input form__input--lock woocommerce-Input woocommerce-Input--text" placeholder="<?php esc_html_e( 'Password', 'woocommerce' ); ?>" name="password" id="reg_password" autocomplete="new-password" />
 				</p>
 
-				<div class="form__btn form__btn-item">
-					<button type="submit" class="form__btn_button--reg" name="registr">Увійти</button>
-				</div>
+			<?php else : ?>
 
-				<?php do_action( 'woocommerce_register_form_end' ); ?>
+				<p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
 
+			<?php endif; ?>
+
+			<?php do_action( 'woocommerce_register_form' ); ?>
+
+			<p class="woocommerce-form-row form-row form__btn">
+				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
+				<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit form__btn_button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
+			</p>
+
+			<div class="form__btn form__btn-item form__btn_button--reg" id="login-form-show">
+				<span>Увійти</span>
 			</div>
 
-			<div class="modal__links">
-				<h3 class="form__title">Увійти за допомогою</h3>
-				<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
-				<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
-			</div>
+			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
-		</form>
+		</div>
 
-	</div>
+		<div class="modal__links">
+			<h3 class="form__title">Увійти за допомогою</h3>
+			<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
+			<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
+		</div>
+
+	</form>
+
 
 	<?php endif; ?>
 </div>
