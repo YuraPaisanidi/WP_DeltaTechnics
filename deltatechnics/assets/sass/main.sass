@@ -1484,7 +1484,7 @@
 
 		+r(768)
 			width: 100%
-			align-items: center
+			// align-items: center
 			padding: 0 30px
 		
 		+r(480)
@@ -4571,6 +4571,10 @@
 
 .woocommerce table.shop_table td
 	border: none
+
+	+r(768)
+		text-align: center !important
+		display: block
 	
 	&::before
 		display: none
@@ -4580,6 +4584,7 @@
 	padding: 25px 40px
 	border-radius: 10px
 	height: 170px
+	position: relative
 
 .product-thumbnail
 	width: 160px
@@ -4587,6 +4592,14 @@
 	overflow: hidden
 	border-radius: 10px 0 0 10px
 	padding: 0 0 0 40px !important
+
+	+r(768)
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translate(0, -50%)
+		display: block !important
+		width: 80px
 
 .shopping-cart__item_img
 	width: 160px
@@ -4674,6 +4687,12 @@
 
 .product-remove
 	border-radius: 0px 10px 10px 0px
+
+	+r(768)
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translate(0, -50%)
 
 .woocommerce a.remove
 	position: relative
@@ -4957,8 +4976,8 @@
 
 .tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
 	top: 25px !important
-	left: 0 !important
-	right: 25px !important
+	left: auto !important
+	right: 21px !important
 	padding: 0 !important
 	height: 36px
 	width: 36px

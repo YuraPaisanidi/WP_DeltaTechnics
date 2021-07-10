@@ -251,17 +251,46 @@ document.addEventListener("DOMContentLoaded", function() {
 	function showLogin () {
 		loginTabContent.classList.add('log-active');
 		regTabContent.classList.remove('log-active');
-		console.log('2');
 	}
+
 	function showReg () {
 		loginTabContent.classList.remove('log-active');
 		regTabContent.classList.add('log-active');
-		console.log('1');
 
 	}
 
 	loginTab.addEventListener('click', showLogin);
 	regTab.addEventListener('click', showReg);
 
+	let menuHrefLog = window.location.href;
+	let menuHrefReg = window.location.href;
 
+	menuHrefLog.addEventListener('click', (e) =>{
+		linkHrefLog.preventDefault();
+		console.log(menuHrefLog)
+	});
+
+	menuHrefReg.addEventListener('click', (e) =>{
+		linkHrefReg.preventDefault();
+		console.log(menuHrefReg);
+	});
+
+	console.log(menuHrefLog);
+	console.log(menuHrefReg);
+
+	function checkUrl(){
+
+	let linkHrefReg = window.location.toString().includes("reg-form");
+	let linkHrefLog = window.location.toString().includes("login-form");
+
+		if(linkHrefReg){
+			showReg();
+		} else if(linkHrefLog) {
+			showLogin();
+		} else {
+			console.log('error');
+		}
+	}
+
+	checkUrl();
 });

@@ -216,12 +216,12 @@
 			</div>
 
 			<div class="header__btns_lang">
-				<a href="#">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/flag-ua.svg" alt="">
-					<ul>
-						<li><img src="<?php echo get_template_directory_uri(); ?>/assets/img/flag-en.svg" alt=""></li>
-					</ul>
-				</a>
+				<?php
+						wp_nav_menu(array(
+							'menu' => 'lang',
+							'theme_location' => 'lang',
+						));
+					?>
 			</div>
 
 		</div>
