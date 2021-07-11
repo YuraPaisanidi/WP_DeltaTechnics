@@ -288,7 +288,6 @@
 	min-height: 70px
 	padding: 15px 0
 	z-index: 1000
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
 	&__container
 		+between
@@ -330,8 +329,7 @@
 			gap: 35px
 
 			+r(1200)
-				// display: none
-				flex-direction: column
+				display: none
 
 			ul
 				+between
@@ -343,9 +341,6 @@
 					color: $accent
 					position: relative
 
-					+r(1200)
-						font-size: 20px
-
 					&::after
 						content: url(../img/dropdown-arrow.svg)
 						position: absolute
@@ -355,6 +350,7 @@
 
 					&:hover
 						color: $accent
+
 
 				ul
 					position: absolute
@@ -373,6 +369,7 @@
 					overflow: auto
 
 					+r(1200)
+						min-height: 200px
 						padding: 10px 10px
 
 					li
@@ -395,6 +392,13 @@
 							&::before, &::after
 								display: none
 
+							&:hover,
+							&:focus
+								background-color: $dark
+								border-radius: 20px
+								color: $red
+								font-weight: bold
+
 				&:hover,
 				&:focus
 					ul
@@ -407,7 +411,7 @@
 							right: 65%
 
 		&_accord
-			display: none
+			display: none			
 
 			+r(1200)
 				display: block
@@ -486,32 +490,8 @@
 		transition: 0.5s
 		background-color: $dark
 		row-gap: 25px
-		max-width: 420px
+		width: 80%
 		overflow: auto
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-
-		li
-			position: relative
-
-			ul
-				position: absolute
-				top: 25px !important
-				left: 0 !important
-				background-color: $bgColor !important
-				border-radius: 10px
-				box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-				z-index: 1
-
-				.menu-item
-					width: 100%
-					border-bottom: 1px solid transparent
-					+transition
-
-					&:hover
-						border-bottom: 1px solid lighten($dark, 70% )
-
-					a
-						color: $text !important
 
 	&__btns
 		+between
@@ -637,18 +617,17 @@
 					position: absolute
 					top: 90%
 					left: 0
-					min-width: 180px
+					width: 120px
 					display: flex
 					flex-direction: column
 					justify-content: space-between
-					gap: 5px
 					background-color: $dark
 					box-shadow: 0 0 15px 0 rgba(#000, .15)
 					transition: all .6s
 					visibility: hidden
 					opacity: 0
 					overflow: auto
-					padding: 10px 15px
+					padding: 10px
 					border-radius: 5px
 
 					a
@@ -668,59 +647,53 @@
 
 		&_lang
 
-			.lang-menu
+			a
+				position: relative
+
+				ul
+					position: absolute
+					top: 90%
+					left: 0
+					width: 26px
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					background-color: $dark
+					box-shadow: 0 0 15px 0 rgba(#000, .15)
+					transition: all .6s
+					visibility: hidden
+					opacity: 0
+					overflow: auto
+					padding: 1px
+					border-radius: 5px
 
 				li
-					position: relative
+					margin-bottom: 5px
+					margin-right: 0
+					padding: 0 !important
 
-					img
-						width: 24px !important
-						height: 20px !important
+					&:last-child
+						margin-bottom: 0
 
-					ul
-						position: absolute
-						top: 90%
-						left: 0
-						width: 26px
-						display: flex
-						flex-direction: column
-						justify-content: space-between
-						background-color: $dark
-						box-shadow: 0 0 15px 0 rgba(#000, .15)
-						transition: all .6s
-						visibility: hidden
-						opacity: 0
-						overflow: auto
-						padding: 1px
-						border-radius: 5px
+					a
+						display: block
+						position: relative
+						color: $accent
 
-					li
-						margin-bottom: 5px
-						margin-right: 0
-						padding: 0 !important
+						&::before
+							display: none
 
-						&:last-child
-							margin-bottom: 0
+						&:hover,
+						&:focus
+							background-color: $dark
+							border-radius: 20px
 
-						a
-							display: block
-							position: relative
-							color: $accent
-
-							&::before
-								display: none
-
-							&:hover,
-							&:focus
-								background-color: $dark
-								border-radius: 20px
-
-				&:hover,
-				&:focus
-					ul
-						visibility: visible
-						top: 130%
-						opacity: 1
+			&:hover,
+			&:focus
+				ul
+					visibility: visible
+					top: 130%
+					opacity: 1
 
 //-----------HOME--------------
 .video
@@ -818,11 +791,6 @@
 				order: -1
 				margin-bottom: 10px
 
-		.menu-footer
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-
 		a
 			color: $accent
 
@@ -913,12 +881,6 @@
 	min-height: 385px
 	position: relative
 
-	+r(768)
-		width: auto
-
-	+r(480)
-		width: 100%
-
 	.product
 		padding: 0 !important
 		
@@ -944,7 +906,6 @@
 		justify-content: flex-start
 		gap: 15px
 		height: 100%
-		width: 100%
 		position: relative
 		padding: 0 !important
 
@@ -976,7 +937,6 @@
 
 		+r(480)
 			height: 250px
-			max-width: 100%
 
 		img
 			object-fit: cover
@@ -1127,7 +1087,6 @@
 	bdi
 		display: flex
 		word-wrap: break-word !important
-		align-items: center
 
 		.woocommerce-Price-currencySymbol
 			background-color: transparent
@@ -1248,7 +1207,7 @@
 	display: flex
 	flex-direction: column
 	max-width: 255px
-	max-height: 385px
+	// max-height: 255px
 	width: 100%
 	padding: 18px !important
 	border-radius: 10px
@@ -1256,11 +1215,20 @@
 	gap: 10px
 	background-color: $accent
 
+	+r(992)
+		max-width: 220px
+
 	+r(768)
 		max-width: 100%
 		width: 100%
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr
+
+	+r(568)
+		grid-template-columns: 1fr 1fr
 
 	&__btn
+		min-width: 220px
 		width: 100%
 		height: 50px
 		border: 1px solid #E4E8F1
@@ -1275,7 +1243,32 @@
 			font-size: 14px
 
 		&:hover
-			background-color: $bgColor
+			background-color: $red
+			color: $accent !important
+
+		// &:last-child
+		// 	padding-right: 15px
+		// 	position: relative
+
+		// 	+r(480)
+		// 		padding-right: 25px
+
+			// &:hover
+				
+			// 	&::after
+			// 		content: url(../img/logout-icon-white.png)
+					
+			// &::after
+			// 	position: absolute
+			// 	content: url(../img/logout-icon-black.png)
+			// 	right: 15px
+			// 	top: 15px
+
+				+r(768)
+					right: 5px
+
+				+r(480)
+					right: 15px
 //-----------------------MAP-------------------
 .map
 	max-width: 730px
@@ -1406,9 +1399,6 @@
 				background-color: $red
 
 // -----MODAL-----
-.log-active
-	display: flex !important
-
 .modal
 	display: flex
 	visibility: hidden
@@ -1445,10 +1435,10 @@
 		height: auto
 		border: 1px solid #8d8d8e
 		margin: auto
-		// transform: translate(0, -150px)
+		transform: translate(0, -150px)
 		border-radius: 10px
+		min-height: 310px
 		align-items: flex-start
-		display: none
 		+transition
 		
 		&::after
@@ -1496,7 +1486,7 @@
 
 		+r(768)
 			width: 100%
-			// align-items: center
+			align-items: center
 			padding: 0 30px
 		
 		+r(480)
@@ -1511,19 +1501,19 @@
 			font-weight: 600
 
 		a
-			// width: 100%
-			// height: 40px
-			// background-color: #000
-			// border-radius: 6px
-			// display: flex
-			// align-items: center
-			// padding-left: 60px
+			width: 100%
+			height: 40px
+			background-color: #000
+			border-radius: 6px
+			display: flex
+			align-items: center
+			padding-left: 60px
 			
-			// +r(768)
-			// 	max-width: 305px
+			+r(768)
+				max-width: 305px
 
-			// &:hover
-			// 	background-color: $red
+			&:hover
+				background-color: $red
 
 				
 			p 
@@ -1622,8 +1612,6 @@
 			width: 100%
 			height: 42px
 			border-radius: 6px
-			font-size: 14px !important
-			font-weight: 400 !important
 			background-color: $red
 			color: $accent
 			outline: none
@@ -1641,10 +1629,6 @@
 				border-radius: 6px
 				outline: none
 				border: none
-				display: flex
-				justify-content: center
-				align-items: center
-				cursor: pointer
 
 				&:hover
 					background-color: darken($bgColor,10% )
@@ -1698,11 +1682,9 @@
 			padding: 25px 15px
 
 		&_item
-			display: flex
-			align-items: flex-end
-			justify-content: center
 			height: 260px
 			background-size: cover
+			padding-bottom: 30px
 			border-radius: 10px
 			box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.1)
 			+transition
@@ -1721,18 +1703,19 @@
 
 			h3
 				width: 100%
-			
-			span
+				height: 100%
 
-				p
-					width: 100%
-					background-color: rgba(238, 240, 245, 0.5)
-					text-align: center
-					color: $dark
-					font-size: 22px
-					font-weight: 600
-					padding: 10px 0
+			a
+				height: 100%
+				width: 100%
+				display: flex
+				align-items: flex-end
+				justify-content: center
+				color: $accent
+				font-size: 22px
 
+				&:hover
+					color: $accent
 
 //--------------KIT----------------------
 .kit
@@ -2278,7 +2261,7 @@
 		padding: 30px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 		
-		+r(1200)
+		+r(992)
 			flex-direction: column
 
 	&__images
@@ -2293,25 +2276,25 @@
 		+r(480)
 			padding: 10px
 
-		// &_main
-		// 	max-width: 455px
-		// 	width: 100%
-		// 	position: relative
-		// 	height: 100%
+		&_main
+			max-width: 455px
+			width: 100%
+			position: relative
+			height: 100%
 
-		// 	+r(1200)
-		// 		max-width: 350px
+			+r(1200)
+				max-width: 350px
 
-		// 	+r(992)
-		// 		max-width: 75%
+			+r(992)
+				max-width: 75%
 
-		// 	+r(576)
-		// 		width: 100%
-		// 		max-width: 100%
+			+r(576)
+				width: 100%
+				max-width: 100%
 
-		// 	img
-		// 		object-fit: cover
-		// 		width: 100%
+			img
+				object-fit: cover
+				width: 100%
 
 		&_3d
 			position: absolute
@@ -2368,11 +2351,10 @@
 		height: 415px
 		padding: 30px 30px 30px 0
 
-		+r(1200)
+		+r(992)
 			max-width: 100%
 			width: 100%
-			// padding: 0px 30px 30px 30px
-			height: auto
+			padding: 0px 30px 30px 30px
 
 		+r(480)
 			padding: 10px
@@ -2388,7 +2370,7 @@
 		&_desc, .woocommerce-product-details__short-description
 			margin-bottom: 70px
 
-			+r(1200)
+			+r(992)
 				margin-bottom: 30px
 
 	&__price
@@ -2399,7 +2381,7 @@
 		
 		+r(992)
 			flex-direction: row
-			// padding: 0px 30px
+			padding: 0px 30px
 
 		+r(768)
 			flex-direction: column
@@ -2447,10 +2429,9 @@
 		width: 100%
 		display: grid
 		grid-template-columns: 1fr 1fr
-		// // // grid-template-rows: 225px 350px 1fr
+		// // grid-template-rows: 225px 350px 1fr
 		grid-gap: 30px
-		// // grid-template-rows: auto
-		// grid-auto-flow: row dense
+		// grid-template-rows: auto
 		padding-bottom: 60px
 		border-bottom: 1px solid #C6C6D2
 
@@ -2554,7 +2535,6 @@
 		max-width: 540px
 		width: 100%
 		padding-top: 25px
-		align-self: start
 		// max-height: 225px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
@@ -2769,12 +2749,11 @@
 			grid-template-columns: 1fr 1fr
 			grid-gap: 20px
 
-			+r(992)
+			+r(768)
 				grid-template-columns: 1fr
 
 			input
-				max-width: 315px
-				width: 100%
+				width: 315px
 				height: 35px
 				line-height: 35px
 				border-radius: 6px
@@ -2782,20 +2761,19 @@
 				padding-left: 10px
 				opacity: 0.5
 
-				+r(992)
-					max-width: 100%
+				+r(768)
+					width: 100%
 
 			&--pass
 				display: grid
 				grid-template-columns: 1fr 1fr
 				grid-gap: 20px
 
-				+r(992)
+				+r(768)
 					grid-template-columns: 1fr
 
 				input
-					max-width: 315px
-					width: 100%
+					width: 315px
 					height: 35px
 					line-height: 35px
 					border-radius: 6px
@@ -2803,14 +2781,13 @@
 					padding-left: 10px
 					opacity: 0.5
 
-					+r(992)
-						max-width: 100%
+					+r(768)
+						width: 100%
 
 				.registr__form_btn
 					background-color: $red
 					border: none
-					max-width: 315px
-					width: 100%
+					width: 315px
 					height: 35px
 					border-radius: 6px
 					padding: 0
@@ -2820,8 +2797,10 @@
 						width: 270px
 
 					+r(992)
+						width: 240px
+
+					+r(768)
 						width: 100%
-						justify-self: center
 
 					&:hover
 						background-color: $dark
@@ -2829,11 +2808,18 @@
 
 		&_password
 			padding-bottom: 35px
+			// padding-left: 45px
 
-			+r(992)
+			+r(768)
 				width: 100%
-				padding-bottom: 0
+				display: flex
+				flex-direction: column
+				padding-right: 45px
 
+			+r(480)
+				padding-left: 20px
+				padding-right: 20px
+				padding-bottom: 20px
 
 		&_btn
 			padding-top: 25px
@@ -3160,16 +3146,16 @@
 		.registr__form
 			max-width: 100%
 
-			// input
+			input
 
-			// 	+r(1200)
-			// 		width: 270px
+				+r(1200)
+					width: 270px
 
-			// 	+r(992)
-			// 		width: 240px
+				+r(992)
+					width: 240px
 
-			// 	+r(768)
-			// 		width: 100%
+				+r(768)
+					width: 100%
 
 //------------------SHOPPING-CART------------
 .shopping-cart
@@ -3852,6 +3838,24 @@
 			justify-content: center
 			height: 35%
 
+			// a
+			// 	display: flex
+			// 	justify-content: center
+			// 	align-items: flex-end
+			// 	font-size: 24px
+			// 	color: $text
+			// 	font-weight: 600
+			// 	width: 100%
+			// 	height: 100%
+			// 	padding-bottom: 30px
+
+			// 	+r(992)
+			// 		font-size: 16px
+
+			// 	+r(576)
+			// 		font-size: 14px
+			// 		padding-bottom: 15px
+
 	&__cat
 		.media-center__item
 			border-bottom: none
@@ -4268,26 +4272,12 @@
 	grid-template-columns: 1fr 3fr
 	grid-gap: 30px
 	margin-bottom: 30px
-	padding: 35px 15px 0 15px
-
-	+r(768)
-		grid-template-columns: 1fr
-		grid-gap: 20px
-		padding-top: 25px
+	padding: 35px 0 0 0
 
 .products
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr
 	grid-gap: 30px
-
-	+r(1200)
-		grid-template-columns: 1fr 1fr
-
-	+r(768)
-		grid-gap: 20px
-
-	+r(480)
-		grid-template-columns: 1fr
 
 	ul
 		+between
@@ -4394,9 +4384,6 @@
 //--------------- WC Product cart---------------
 .product
 	width: 100%
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
 .cart
 	display: flex
@@ -4445,27 +4432,16 @@
 	justify-content: space-between
 	flex-direction: row-reverse
 
-	+r(1200)
-		margin-bottom: 20px
-
-	+r(768)
-		height: 300px !important
-
-	+r(576)
-		flex-direction: column-reverse
-
 .flex-viewport
-	max-width: 455px
-	width: 100%
+	max-width: 455px !important
 	margin-right: 15px
+	width: 100%
 	order: 1
 	cursor: url('../img/cursor.png'), pointer
-	border-radius: 10px
-	max-height: 355px
-
 
 	img
 		max-width: 100%
+		width: 100%
 		height: auto
 
 .flex-control-nav
@@ -4503,15 +4479,10 @@
 
 
 	li
-		margin-bottom: 12px
-		width: 125px
-		height: 80px
+		margin-bottom: 12px !important
+		width: 125px !important
+		height: 80px !important
 		transition: all .6s
-
-		+r(576)
-			margin-bottom: 5px
-			width: 65px
-			height: 45px
 
 		&:last-child
 			margin-bottom: 0
@@ -4522,7 +4493,6 @@
 		height: 100% !important
 		border-radius: 7px !important
 
-
 .flex-active
 	border: 1px solid #b7b7b7
 
@@ -4532,8 +4502,25 @@
 	border-right: 1px solid rgba(0, 0, 0,0.1)
 	margin: 0
 
+	+r(992)
+		width: 100%
+
+	+r(480)
+		padding: 10px
+
+.woocommerce-product-gallery__image
+	height: 100%
+	width: 455px !important
+	border-radius: 10px
+	position: relative
+
+
 .woocommerce-product-gallery__trigger
 	display: none
+
+.wp-post-image
+	width: 455px !important
+	height: 355px !important
 
 .price
 	display: flex
@@ -4559,26 +4546,15 @@
 .shop_table
 	border: none !important
 	border-spacing: 0 30px
-	
-	tbody
-		width: 100%
 
 .woocommerce table.shop_table td
 	border: none
-
-	+r(768)
-		text-align: center !important
-		display: block
-	
-	&::before
-		display: none
 
 .cart_item
 	background-color: $accent
 	padding: 25px 40px
 	border-radius: 10px
 	height: 170px
-	position: relative
 
 .product-thumbnail
 	width: 160px
@@ -4586,14 +4562,6 @@
 	overflow: hidden
 	border-radius: 10px 0 0 10px
 	padding: 0 0 0 40px !important
-
-	+r(768)
-		position: absolute
-		left: 0
-		top: 50%
-		transform: translate(0, -50%)
-		display: block !important
-		width: 80px
 
 .shopping-cart__item_img
 	width: 160px
@@ -4663,30 +4631,12 @@
 	border: none
 	border-radius: 5px
 	z-index: 100
-	display: flex
-	flex-direction: column-reverse
-	gap: 10px
-	align-items: center
-	text-align: center
-
-	.woocommerce-button
-		width: 50%
-		align-items: center
-
-	&::before
-		display: none
 
 	.restore-item
 		color: $red
 
 .product-remove
 	border-radius: 0px 10px 10px 0px
-
-	+r(768)
-		position: absolute
-		right: 0
-		top: 50%
-		transform: translate(0, -50%)
 
 .woocommerce a.remove
 	position: relative
@@ -4721,9 +4671,6 @@
 .woocommerce-notices-wrapper
 	position: absolute
 
-	a
-		color: $red !important
-
 //-----------Related------
 .columns-4
 	grid-template-columns: 1fr 1fr 1fr 1fr
@@ -4731,9 +4678,11 @@
 .related
 	padding-bottom: 60px
 
+
 .woocommerce-product-gallery
 	display: flex
 	justify-content: space-between
+
 
 .woocommerce-mini-cart__empty-message
 	display: none
@@ -4753,30 +4702,24 @@
 .aws-search-result
 	&:hover + .header__btns_item--search
 		background-color: $red
+		
+
 
 //--------------WC Profile----------------
 .woocommerce-MyAccount-navigation-link
 	list-style-type: none
 
 .profile__content
-
-	.profile-wrapper
+	.woocommerce
 		display: grid
 		grid-template-columns: 255px 1fr
 		grid-gap: 30px
-
-		+r(768)
-			grid-gap: 20px
-			grid-template-columns: 1fr
 
 		.woocommerce-MyAccount-content
 			background-color: $accent !important
 			padding: 45px 105px 25px 70px
 			border-radius: 10px
 			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-
-			+r(992)
-				padding: 30px
 
 			.registr__form_info
 				margin-bottom: 35px
@@ -4790,29 +4733,16 @@
 				margin-bottom: 20px !important
 
 .profile__menu
+	padding: 0
 
 	ul
 		display: flex
 		flex-direction: column
 		gap: 10px
 
-		+r(768)
-			display: grid
-			grid-template-columns: 1fr 1fr !important
-
 	li
 		display: flex
 		justify-content: center
-
-		&:last-child
-			position: relative
-
-			&::after
-				position: absolute
-				content: url(../img/logout-icon-black.png)
-				right: 15px
-				top: 15px
-				+transition
 
 	.menu-item
 		min-width: 220px
@@ -4820,25 +4750,21 @@
 		height: 50px
 		border: 1px solid #E4E8F1
 		border-radius: 6px
+		display: flex
+		align-items: center
 		padding-left: 15px
 		background-color: $accent
 		+transition
 
 		&:hover
 			background-color: $red
+			color: $accent !important
 
 		a
-			display: flex
-			align-items: center
 			color: $text
-			height: 100%
-			width: 100%
 
 			+r(992)
 				font-size: 14px
-
-			&:hover
-				color: $accent
 
 
 .woocommerce-Button
@@ -4877,38 +4803,24 @@
 	align-items: center
 	justify-content: center
 
-.is-active
-	.profile-menu__btn
-		background-color: $red
-		color: $accent
+.woocommerce-MyAccount-content button
+	color: $accent !important
+	background-color: $red !important
+	width: 315px !important
+	height: 35px !important
+	border-radius: 6px !important
+	+transition
+
+	&:hover
+		background-color: $dark !important
+
 //----------------WC-Login---------
 .form__forgot-pass
 	position: absolute
-	top: 50%
-	right: 1px
-	transform: translate(0, -50%)
+	top: 23%
+	right: 5%
 	color: rgba(250, 223, 130, 1)
-	background-color: #fff
-	padding-left: 10px
-	height: 37px
-	padding-right: 10px
-	padding-left: 10px
-	display: flex
-	align-items: center
 
-.show-password-input
-	display: none
-
-.woocommerce-form
-	margin: 0 auto !important
-	padding: 20px
-	// position: absolute
-	// top: 50%
-	// left: 50%
-	// transform: translate(-50%, -50%)
-
-	.nsl-container
-		width: 100% !important
 
 //----------------WC-Wishlist----------
 .wishlist__content
@@ -4917,55 +4829,11 @@
 	grid-template-columns: 255px 1fr
 	grid-gap: 30px
 
-	.menu-profile-container
-		background-color: #fff
-		padding: 20px
-		border-radius: 10px
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-
-	.profile__menu
-		display: flex
-		flex-direction: column
-		gap: 10px
-
-		.menu-item-577
-			background-color: $red
-
-			a
-				color: $accent !important
-
-			&:hover
-				background-color: $red
-
-				a
-					color: $accent !important
-		
-		li
-
-			&:hover
-				background-color: #eef0f5
-
-			a
-				color: $text !important
-
-
-
 .tinv-wishlist
 	background-color: $accent
 	border-radius: 10px
 	box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2)
 	display: block !important
-
-	form
-		padding: 20px
-
-	thead
-		display: none
-
-	.product-thumbnail
-
-		.attachment-woocommerce_thumbnail
-			border-radius: 6px
 
 	.product-name
 		a
@@ -4981,7 +4849,7 @@
 		min-width: 200px
 
 .tinv-header
-	display: none
+	padding: 20px
 
 	h2
 		font-size: 32px
@@ -5002,14 +4870,16 @@
 		background-color: $dark !important
 
 .tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart
-	top: 25px !important
-	left: auto !important
-	right: 21px !important
+	top: 26px !important
+	left: 200px !important
 	padding: 0 !important
-	height: 36px
-	width: 36px
 
 .tinvwl_add_to_wishlist_button
+	width: 35px !important
+	height: 35px !important
+	margin-top: 0 !important
+	transition: .3s !important
+	border-radius: 10px !important
 
 	&:focus,
 	&:active
@@ -5049,22 +4919,3 @@
 
 .wp-wrapper
 	min-height: calc(100vh-var(--footer-height))
-
-.woocommerce-error
-	padding-left: 50px
-
-//------------Checkout-------------------------
-.woocommerce-billing-fields__field-wrapper,
-.woocommerce-additional-fields__field-wrapper,
-.woocommerce-checkout-review-order
-	background-color: #fff
-	padding: 20px
-	border-radius: 10px
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-
-	textarea
-		height: 200px !important;
-		resize: none;
-
-	.col2-set
-		margin-bottom: 30px

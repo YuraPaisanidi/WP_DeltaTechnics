@@ -1,16 +1,16 @@
 <div class="side-menu">
 	<div class="side-menu__item">
-		<a href="<?php the_field('sidebar_url_1', 'option'); ?>">
+		<a href="<?php the_field('sidebar_url_1', pll_current_language ( 'slug' ) ); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery-icon.svg" alt="">
 		</a>
 	</div>
 	<div class="side-menu__item">
-		<a href="<?php the_field('sidebar_url_2', 'option'); ?>">
+		<a href="<?php the_field('sidebar_url_2', pll_current_language ( 'slug' ) ); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pin-icon.svg" alt="">
 		</a>
 	</div>
 	<div class="side-menu__item">
-		<a href="<?php the_field('sidebar_url_3', 'option'); ?>" target="_blank">
+		<a href="<?php the_field('sidebar_url_3', pll_current_language ( 'slug' ) ); ?>" target="_blank">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb-icon.svg" alt="">
 		</a>
 	</div>
@@ -33,33 +33,19 @@
 					) );
 			?>
 
-			<div class="header__nav_accord">
-
-
-				<?php 
-					wp_nav_menu( array(
-						'menu'=>'menu',
-						'menu_class'=>'header__nav_menu',
-						'theme_location'=>'menu',
-						) );
-				?>
-
-
-			</div>
-
 			<div class="side-menu__mobile">
 				<div class="side-menu__item">
-					<a href="<?php the_field('sidebar_url_1', 'option'); ?>" target="_blank">
+					<a href="<?php the_field('sidebar_url_1', pll_current_language ( 'slug' ) ); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery-icon.svg" alt="">
 					</a>
 				</div>
 				<div class="side-menu__item">
-					<a href="<?php the_field('sidebar_url_2', 'option'); ?>" target="_blank">
+					<a href="<?php the_field('sidebar_url_2', pll_current_language ( 'slug' ) ); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pin-icon.svg" alt="">
 					</a>
 				</div>
 				<div class="side-menu__item">
-					<a href="<?php the_field('sidebar_url_3', 'option'); ?>" target="_blank">
+					<a href="<?php the_field('sidebar_url_3', pll_current_language ( 'slug' ) ); ?>" target="_blank">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb-icon.svg" alt="">
 					</a>
 				</div>
@@ -83,7 +69,7 @@
 			<?php cart_link(); ?><?php the_widget('WC_Widget_Cart', 'title='); ?>
 
 			<div class="header__btns_item header__btns_item--auth">
-				<a href="<?php echo get_home_url(); ?>/my-account/">
+				<a href="<?php the_field('profile_url', pll_current_language ( 'slug' ) ); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg" alt="">
 					<?php 
 					wp_nav_menu( array(

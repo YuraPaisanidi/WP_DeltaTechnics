@@ -16,21 +16,21 @@ get_header();
 <div class="about__container container">
 
 	<div class="about__text">
-		<?php the_field('info'); ?>
+		<?php the_field('about_info', pll_current_language ( 'slug' ) ); ?>
 	</div>
 
 	<article class="about__bio">
 		<div class="about__bio_img">
-			<img src="<?php the_field('img'); ?>" alt="">
+			<img src="<?php the_field('about_img', pll_current_language ( 'slug' ) ); ?>" alt="">
 		</div>
 		<div class="about__bio_info">
-			<p class="about__bio_name"><?php the_field('name'); ?></p>
-			<p class="about__bio_position"><?php the_field('role'); ?></p>
+			<p class="about__bio_name"><?php the_field('about_name', pll_current_language ( 'slug' ) ); ?></p>
+			<p class="about__bio_position"><?php the_field('about_role', pll_current_language ( 'slug' ) ); ?></p>
 			<p class="about__bio_achieve">
-				<?php the_field('achive'); ?>
+				<?php the_field('about_achive', pll_current_language ( 'slug' ) ); ?>
 			</p>
 			<p class="about__bio_quote">
-				<?php the_field('quote'); ?>
+				<?php the_field('about_quote', pll_current_language ( 'slug' ) ); ?>
 			</p>
 		</div>
 	</article>

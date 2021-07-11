@@ -262,22 +262,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	loginTab.addEventListener('click', showLogin);
 	regTab.addEventListener('click', showReg);
 
-	let menuHrefLog = window.location.href;
-	let menuHrefReg = window.location.href;
-
-	menuHrefLog.addEventListener('click', (e) =>{
-		linkHrefLog.preventDefault();
-		console.log(menuHrefLog)
-	});
-
-	menuHrefReg.addEventListener('click', (e) =>{
-		linkHrefReg.preventDefault();
-		console.log(menuHrefReg);
-	});
-
-	console.log(menuHrefLog);
-	console.log(menuHrefReg);
-
 	function checkUrl(){
 
 	let linkHrefReg = window.location.toString().includes("reg-form");

@@ -36,8 +36,8 @@
 	<div class="copyright">
 		<div class="copyright__container container">
 			<p>© Copyright 2021 | Delta Technics</p>
-			<a href="<?php echo get_home_url(); ?>/privacy-policy/">Конфиденциальность</a>
-			<a href="<?php echo get_home_url(); ?>/uslovija-polzovanija/">Условия пользования</a>
+			<a href="<?php the_field('policy_url', pll_current_language ( 'slug' ) ); ?>"><?php the_field('policy', pll_current_language ( 'slug' ) ); ?></a>
+			<a href="<?php the_field('using_url', pll_current_language ( 'slug' ) ); ?>"><?php the_field('using', pll_current_language ( 'slug' ) ); ?></a>
 		</div>
 	</div>
 

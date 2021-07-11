@@ -20,9 +20,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Полезная литература
+						<?php the_field('lit_title', pll_current_language ( 'slug' ) ); ?>
 					</p>
-					<a href="<?php echo get_home_url(); ?>/lit/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php the_field('lit_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__item_btn"><?php the_field('show_btn', pll_current_language ( 'slug' ) ); ?></a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -62,9 +62,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Полезные статьи
+						<?php the_field('art_title', pll_current_language ( 'slug' ) ); ?>
 					</p>
-					<a href="<?php echo get_home_url(); ?>/art/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php the_field('art_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__item_btn"><?php the_field('show_btn', pll_current_language ( 'slug' ) ); ?></a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -104,9 +104,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Обзор новинок на рынке
+						<?php the_field('rev_title', pll_current_language ( 'slug' ) ); ?>
 					</p>
-					<a href="<?php echo get_home_url(); ?>/rev/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php the_field('rev_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__item_btn"><?php the_field('show_btn', pll_current_language ( 'slug' ) ); ?></a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -146,9 +146,9 @@ get_header();
 			<div class="media-center__item">
 				<div class="media-center__item_top">
 					<p class="media-center__item_title">
-						Видео
+						<?php the_field('video_title', pll_current_language ( 'slug' ) ); ?>
 					</p>
-					<a href="<?php echo get_home_url(); ?>/video/" class="media-center__item_btn">Показать все</a>
+					<a href="<?php the_field('video_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__item_btn"><?php the_field('show_btn', pll_current_language ( 'slug' ) ); ?></a>
 				</div>
 				<div class="media-center__item_wrap">
 				
@@ -188,23 +188,23 @@ get_header();
 		</div>
 
 		<div class="media-center__links">
-			<a href="<?php echo get_home_url(); ?>/akademija-dt/" class="media-center__links_item">
+			<a href="<?php the_field('academy_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
 				<div class="media-center__links_img">
 					<img src="<?php the_field('media_centr_img', 'option'); ?>" alt="">
 				</div>
-				<p>Академия DT</p>
+				<p><?php the_field('academy', pll_current_language ( 'slug' ) ); ?></p>
 			</a>
-			<a href="<?php echo get_home_url(); ?>/turnir-dt/" class="media-center__links_item">
+			<a href="<?php the_field('tournament_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
 				<div class="media-center__links_img">
 					<img src="<?php the_field('media_centr_img_1', 'option'); ?>" alt="">
 				</div>
-				<p>Турнир DT</p>
+				<p><?php the_field('tournament', pll_current_language ( 'slug' ) ); ?></p>
 			</a>
-			<a href="<?php echo get_home_url(); ?>/uslovija-garantii/" class="media-center__links_item">
+			<a href="<?php the_field('warranty_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
 				<div class="media-center__links_img">
 					<img src="<?php the_field('media_centr_img_2', 'option'); ?>" alt="">
 				</div>
-				<p>Условия гарантии</p>
+				<p><?php the_field('warranty', pll_current_language ( 'slug' ) ); ?></p>
 			</a>
 		</div>
 
