@@ -259,8 +259,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	}
 
-	loginTab.addEventListener('click', showLogin);
-	regTab.addEventListener('click', showReg);
+	// loginTab.addEventListener('click', showLogin);
+	// regTab.addEventListener('click', showReg);
 
 	function checkUrl(){
 

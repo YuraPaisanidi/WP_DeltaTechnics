@@ -330,7 +330,6 @@
 			gap: 35px
 
 			+r(1200)
-				// display: none
 				flex-direction: column
 
 			ul
@@ -902,7 +901,8 @@
 		width: 70%
 		height: 100%
 
-//------------------------PRODUCT-CART---------
+//------------------------PRODUCT-CART--------
+
 .product-cart
 	display: flex
 	flex-direction: column
@@ -912,7 +912,8 @@
 	border-radius: 10px
 	padding: 20px 15px 
 	gap: 15px
-	width: 255px
+	max-width: 255px
+	width: 100%
 	min-height: 385px
 	height: 100%
 	position: relative
@@ -921,7 +922,15 @@
 		width: auto
 
 	+r(480)
-		width: 100%
+		max-width: 100%
+
+	
+
+	.tinvwl_add_to_wishlist_button
+		margin: 0 !important
+		
+		&::before
+			top: 50%
 
 	.product
 		padding: 0 !important
@@ -1437,7 +1446,6 @@
 		height: auto
 		border: 1px solid #8d8d8e
 		margin: auto
-		// transform: translate(0, -150px)
 		border-radius: 10px
 		align-items: flex-start
 		display: none
@@ -1488,7 +1496,6 @@
 
 		+r(768)
 			width: 100%
-			// align-items: center
 			padding: 0 30px
 		
 		+r(480)
@@ -1502,23 +1509,7 @@
 			text-align: center
 			font-weight: 600
 
-		a
-			// width: 100%
-			// height: 40px
-			// background-color: #000
-			// border-radius: 6px
-			// display: flex
-			// align-items: center
-			// padding-left: 60px
-			
-			// +r(768)
-			// 	max-width: 305px
-
-			// &:hover
-			// 	background-color: $red
-
-				
-			p 
+			p
 				color: $accent
 				font-size: 14px
 				position: relative
@@ -1842,29 +1833,6 @@
 			padding-top: 20px
 			padding-right: 10px
 			padding-left: 10px
-
-	// &__menu
-	// 	display: flex
-	// 	flex-direction: column
-	// 	align-items: center
-	// 	justify-content: space-between
-	// 	height: 450px
-	// 	padding: 18px 16px
-	// 	border-radius: 10px
-	// 	background-color: #fff
-	// 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
-	// 	grid-row-start: 1
-	// 	grid-row-end: 5
-	// 	position: sticky
-	// 	top: 100px
-
-	// 	+r(1200)
-	// 		grid-row-end: 7
-
-	// 	+r(480)
-	// 		grid-row-start: 1
-	// 		grid-row-end: 1
-	// 		position: static
 
 		&_drop
 			border-bottom: 1px solid #E8E8F1
@@ -2285,26 +2253,6 @@
 		+r(480)
 			padding: 10px
 
-		// &_main
-		// 	max-width: 455px
-		// 	width: 100%
-		// 	position: relative
-		// 	height: 100%
-
-		// 	+r(1200)
-		// 		max-width: 350px
-
-		// 	+r(992)
-		// 		max-width: 75%
-
-		// 	+r(576)
-		// 		width: 100%
-		// 		max-width: 100%
-
-		// 	img
-		// 		object-fit: cover
-		// 		width: 100%
-
 		&_3d
 			position: absolute
 			bottom: 20px
@@ -2363,7 +2311,6 @@
 		+r(1200)
 			max-width: 100%
 			width: 100%
-			// padding: 0px 30px 30px 30px
 			height: auto
 
 		+r(480)
@@ -2388,14 +2335,15 @@
 		flex-direction: column
 		justify-content: space-between
 		gap: 20px
-		
+
 		+r(992)
 			flex-direction: row
-			// padding: 0px 30px
-
 		+r(768)
 			flex-direction: column
 			padding: 0
+
+		+r(480)
+			text-align: center
 
 	&__btns
 		+between
@@ -2439,10 +2387,7 @@
 		width: 100%
 		display: grid
 		grid-template-columns: 1fr 1fr
-		// // // grid-template-rows: 225px 350px 1fr
 		grid-gap: 30px
-		// // grid-template-rows: auto
-		// grid-auto-flow: row dense
 		padding-bottom: 60px
 		border-bottom: 1px solid #C6C6D2
 
@@ -2481,21 +2426,12 @@
 		border-radius: 10px
 		max-width: 540px
 		width: 100%
-		// max-height: 760px
 		padding: 30px 0
-		// grid-row-start: 1
-		// grid-row-end: 4
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 		
 		+r(992)
-			// grid-column-start: 1
-			// grid-column-end: 3
 			width: 100%
 			max-width: 100%
-
-		+r(768)
-			// grid-column-start: 1
-			// grid-column-end: 1
 
 		+r(480)
 			padding: 15px 0
@@ -2547,7 +2483,6 @@
 		width: 100%
 		padding-top: 25px
 		align-self: start
-		// max-height: 225px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
 		+r(992)
@@ -2741,10 +2676,6 @@
 
 				+r(480)
 					font-size: 22px
-
-		&_info
-			// margin-bottom: 35px
-			// padding-left: 45px
 
 			+r(768)
 				width: 100%
@@ -3133,9 +3064,6 @@
 
 	&__content
 		padding: 30px 0 50px
-		// display: grid
-		// grid-template-columns: 255px 1fr
-		// grid-gap: 30px
 
 		+r(992)
 			grid-gap: 15px
@@ -3151,17 +3079,6 @@
 
 		.registr__form
 			max-width: 100%
-
-			// input
-
-			// 	+r(1200)
-			// 		width: 270px
-
-			// 	+r(992)
-			// 		width: 240px
-
-			// 	+r(768)
-			// 		width: 100%
 
 //------------------SHOPPING-CART------------
 .shopping-cart
@@ -3566,6 +3483,7 @@
 
 	&__title
 		font-family: $title
+		text-align: center
 		font-size: 48px
 
 		+r(992)
@@ -3578,6 +3496,7 @@
 		font-size: 18px
 		font-weight: 600
 		margin-bottom: 35px
+		text-align: center
 
 		+r(992)
 			margin-bottom: 20px
@@ -3633,7 +3552,8 @@
 				gap: 10px
 
 			a
-				color: $text
+				color: $text !important
+				font-weight: 600
 
 				+r(992)
 					font-size: 14px
@@ -4393,13 +4313,61 @@
 //--------------- WC Product cart---------------
 .product
 	width: 100%
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	overflow: hidden
 
 .cart
 	display: flex
-	gap: 15px
+	gap: 10px
+
+	+r(480)
+		justify-content: center
+
+.slick-list.draggable
+	height: 350px !important
+	border-radius: 10px
+
+	+r(480)
+		height: 250px !important
+
+	img
+		max-width: 100%
+		width: 100%
+
+	iframe#product_video_iframe
+		min-height: 350px !important
+		height: 350px !important
+		max-width: 100%
+
+		+r(1200)
+			height: 100% !important
+
+.images
+	width: 60%
+	height: 350px !important
+
+	+r(1200)
+		width: 100%
+		height: 400px !important
+
+	+r(480)
+		height: 250px !important
+
+.product_thumbnail_item
+	margin-bottom: 7px !important
+
+	+r(480)
+		margin-bottom: 2px !important
+
+	img
+		height: 80px !important
+		object-fit: cover
+		border-radius: 7px
+
+		+r(1200)
+			max-width: 120px !important
+		
+		+r(480)
+			height: 50px !important
 
 .single_add_to_cart_button
 	display: flex
@@ -4422,117 +4390,6 @@
 
 .product-page__top
 	position: relative
-
-	.onsale
-		position: absolute !important
-		left: 45px
-		top: 45px
-		z-index: 10
-		background-color: $red
-		color: $accent
-		width: 40px
-		height: 32px
-		font-size: 12px
-		font-weight: 600
-		display: flex
-		align-items: center
-		justify-content: center
-		border-radius: 5px
-
-.woocommerce-product-gallery
-	display: flex
-	justify-content: space-between
-	flex-direction: row-reverse
-
-	+r(1200)
-		margin-bottom: 20px
-
-	+r(768)
-		height: 300px !important
-
-	+r(576)
-		flex-direction: column-reverse
-
-.flex-viewport
-	max-width: 455px
-	width: 100%
-	margin-right: 15px
-	order: 1
-	cursor: url('../img/cursor.png'), pointer
-	border-radius: 10px
-	max-height: 355px
-
-
-	img
-		max-width: 100%
-		height: auto
-
-.flex-control-nav
-	list-style-type: none
-	padding-left: 0
-	margin-right: 15px
-	padding-right: 10px
-	overflow: auto
-	max-height: 355px
-
-	&::-webkit-scrollbar
-		width: 5px
-		height: 8px
-		background-color: #fff
-
-	/* ползунок скроллбара */
-	&::-webkit-scrollbar-thumb
-		background-color: $dark
-
-	&::-webkit-scrollbar-thumb:hover
-		background-color: #253861
-
-	/* Стрелки */
-	&::-webkit-scrollbar-button:vertical:start:decrement
-		background-color: #f6f8f4
-
-	&::-webkit-scrollbar-button:vertical:end:increment
-		background-color: #f6f8f4
-
-	&::-webkit-scrollbar-button:horizontal:start:decrement
-		background-color: #f6f8f4
-
-	&::-webkit-scrollbar-button:horizontal:end:increment
-		background-color: #f6f8f4
-
-
-	li
-		margin-bottom: 12px
-		width: 125px
-		height: 80px
-		transition: all .6s
-
-		+r(576)
-			margin-bottom: 5px
-			width: 65px
-			height: 45px
-
-		&:last-child
-			margin-bottom: 0
-
-	img
-		object-fit: cover
-		width: 100% !important
-		height: 100% !important
-		border-radius: 7px !important
-
-
-.flex-active
-	border: 1px solid #b7b7b7
-
-.woocommerce-product-gallery__wrapper
-	position: relative
-	gap: 15px
-	border-right: 1px solid rgba(0, 0, 0,0.1)
-	margin: 0
-
-.woocommerce-product-gallery__trigger
-	display: none
 
 .price
 	display: flex
@@ -4643,8 +4500,7 @@
 		background-color: lighten($red, 5%)
 
 .wbu-btn-sub
-	background-color: #EAEDF3
-	opacity: 0.3
+	background-color: $bgColor
 	color: $text
 
 	&:hover
@@ -4652,7 +4508,7 @@
 		background-color: darken(#EAEDF3, 10%)
 
 .qty
-	background-color: transparent
+	background-color: $bgColor
 	width: 47px
 	height: 42px
 	border: none
@@ -4727,15 +4583,48 @@
 	margin: 0 !important
 	font-family: $pricefnt
 
+.added_to_cart
+	display: none !important
+
 .woocommerce-notices-wrapper
 	position: absolute
+	right: 0
+	left: 0
+	width: 100%
+	max-width: 750px
+	margin: 0 auto
+	
+	.woocommerce-message
+		margin-bottom: 5px
+		font-size: 12px
+		display: block
 
 	a
 		color: $red !important
 
 //-----------Related------
 .columns-4
-	grid-template-columns: 1fr 1fr 1fr 1fr
+	grid-template-columns: 1fr 1fr 1fr 1fr !important
+	grid-gap: 15px
+
+	+r(1200)
+		grid-template-columns: 1fr 1fr 1fr !important
+
+	+r(992)
+		grid-template-columns: 1fr 1fr !important
+
+	+r(480)
+		grid-template-columns: 1fr !important
+
+	.product-cart
+
+		+r(992)
+			max-width: 255px !important
+			width: 100%
+
+		+r(480)
+			max-width: 100% !important
+			width: 100%
 
 .related
 	padding-bottom: 60px
@@ -4907,10 +4796,6 @@
 .woocommerce-form
 	margin: 0 auto !important
 	padding: 20px
-	// position: absolute
-	// top: 50%
-	// left: 50%
-	// transform: translate(-50%, -50%)
 
 	.nsl-container
 		width: 100% !important
@@ -4962,6 +4847,9 @@
 
 			a
 				color: $text !important
+
+.tinv-wishlist.tinvwl-after-add-to-cart .tinvwl_add_to_wishlist_button
+	margin-top: 0 !important
 
 .tinv-wishlist
 	background-color: $accent
@@ -5080,5 +4968,28 @@
 		height: 200px !important;
 		resize: none;
 
-	.col2-set
-		margin-bottom: 30px
+.col2-set
+	margin-bottom: 30px
+
+.shop_table
+
+	.product-name
+		text-align: center
+		padding: 0
+
+	.cart-item
+		padding: 0 !important
+
+	.product-name
+		text-align: center
+		padding: 0 !important
+
+		a.remove
+			margin: 0 auto
+			margin-bottom: 10px
+
+	.quantity
+		display: flex !important
+		justify-content: center
+		gap: 10px
+		margin-top: 15px

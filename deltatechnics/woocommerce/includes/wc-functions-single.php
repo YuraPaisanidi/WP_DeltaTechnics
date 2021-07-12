@@ -24,7 +24,7 @@ add_action( 'woocommerce_single_product_price', 'woocommerce_template_single_add
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'tb_woo_custom_cart_button_text' );
 add_filter( 'woocommerce_product_add_to_cart_text', 'tb_woo_custom_cart_button_text' );   
 function tb_woo_custom_cart_button_text() {
-				return __( 'Замовити', 'woocommerce' );
+				return __( 'Order', 'woocommerce' );
 }
 
 
@@ -37,13 +37,13 @@ function my_related_products_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'my_related_products_args' );
 /** задаём количество похожих товаров, колонок */
 
-//-----------------Product gallery-------------------
-function schoolstudy_woocommerce_setup()
-{
-	add_theme_support('woocommerce');
-	add_theme_support('wc-product-gallery-zoom');
-	add_theme_support('wc-product-gallery-lightbox');
-	add_theme_support('wc-product-gallery-slider');
-}
-add_action('after_setup_theme', 'schoolstudy_woocommerce_setup');
+// //-----------------Product gallery-------------------
+// function schoolstudy_woocommerce_setup()
+// {
+// 	add_theme_support('woocommerce');
+// 	add_theme_support('wc-product-gallery-zoom');
+// 	add_theme_support('wc-product-gallery-lightbox');
+// 	add_theme_support('wc-product-gallery-slider');
+// }
+// add_action('after_setup_theme', 'schoolstudy_woocommerce_setup');
 
