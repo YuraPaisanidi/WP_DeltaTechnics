@@ -58,7 +58,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 		</div>
 
 		<div class="modal__links">
-			<h3 class="form__title">Увійти за допомогою</h3>
+			<h3 class="form__title"><?php the_field('login_soc', pll_current_language ( 'slug' ) ); ?></h3>
 			<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
 			<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
 		</div>
@@ -119,7 +119,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 		</div>
 
 		<div class="modal__links">
-			<h3 class="form__title">Увійти за допомогою</h3>
+			<h3 class="form__title"><?php the_field('login_soc', pll_current_language ( 'slug' ) ); ?></h3>
 			<?php echo do_shortcode('[nextend_social_login provider="google"]'); ?>
 			<?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
 		</div>

@@ -22,7 +22,6 @@ global $post;
 $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) );
 
 ?>
-<div class="product-page__param">
 	<div class="product-page__desc">
 		<?php if ( $heading ) : ?>
 			<p class="product-page__subtitle"><?php echo esc_html( $heading ); ?></p>
@@ -34,6 +33,7 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 			<?php the_content(); ?>
 		</p>
 	</div>
+<div class="product-page__param">
 
 	<?php if( have_rows('info') ): ?>
 		<?php while( have_rows('info') ): the_row(); 
