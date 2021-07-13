@@ -17,13 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<table class="shop_table woocommerce-checkout-review-order-table">
-	<thead>
-		<tr>
-			<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-		</tr>
-	</thead>
-	<tbody>
+<div class="checkout_review">
 		<?php
 		do_action( 'woocommerce_review_order_before_cart_contents' );
 
@@ -32,26 +26,26 @@ defined( 'ABSPATH' ) || exit;
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
-				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-					<td class="product-name">
+				<div class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<div class="checkout_product-name">
 						<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '&nbsp;'; ?>
 						<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					</td>
-				</tr>
+					</div>
+				</div>
 				<?php
 			}
 		}
 
 		do_action( 'woocommerce_review_order_after_cart_contents' );
 		?>
-	</tbody>
-	<tfoot>
+	</div>
+	<div class="checkout_subtotal">
 
-		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_subtotal_html(); ?></td>
-		</tr>
+		<div class="cart-subtotal">
+			<span><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></span>
+			<span><?php wc_cart_totals_subtotal_html(); ?></span>
+		</div>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
@@ -95,12 +89,12 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
-		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_order_total_html(); ?></td>
-		</tr>
+		<div class="checkout-total">
+			<span><?php esc_html_e( 'Total', 'woocommerce' ); ?></span>
+			<span><?php wc_cart_totals_order_total_html(); ?></span>
+		</div>
 
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
 
-	</tfoot>
-</table>
+	</div>
+</div>

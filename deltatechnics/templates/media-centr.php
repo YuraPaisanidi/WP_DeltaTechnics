@@ -187,27 +187,6 @@ get_header();
 
 		</div>
 
-		<div class="media-center__links">
-			<a href="<?php the_field('academy_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
-				<div class="media-center__links_img">
-					<img src="<?php the_field('media_centr_img', 'option'); ?>" alt="">
-				</div>
-				<p><?php the_field('academy', pll_current_language ( 'slug' ) ); ?></p>
-			</a>
-			<a href="<?php the_field('tournament_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
-				<div class="media-center__links_img">
-					<img src="<?php the_field('media_centr_img_1', 'option'); ?>" alt="">
-				</div>
-				<p><?php the_field('tournament', pll_current_language ( 'slug' ) ); ?></p>
-			</a>
-			<a href="<?php the_field('warranty_url', pll_current_language ( 'slug' ) ); ?>" class="media-center__links_item">
-				<div class="media-center__links_img">
-					<img src="<?php the_field('media_centr_img_2', 'option'); ?>" alt="">
-				</div>
-				<p><?php the_field('warranty', pll_current_language ( 'slug' ) ); ?></p>
-			</a>
-		</div>
-
 	</div>
 
 	<?php get_template_part( 'parts/social_links' ); ?>

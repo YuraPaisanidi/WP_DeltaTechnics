@@ -926,8 +926,6 @@
 	+r(480)
 		max-width: 100%
 
-	
-
 	.tinvwl_add_to_wishlist_button
 		margin: 0 !important
 		
@@ -4178,7 +4176,6 @@
 		+r(600)
 			position: fixed
 
-
 //-----------------WC Shop---------------------
 .shop-wrapper
 	display: grid
@@ -4308,6 +4305,15 @@
 
 	.wpfFilterWrapper
 		padding: 0 !important
+
+.wpfFilterVerScroll
+	
+	li
+		&:first-child
+
+			.wpfDisplay
+				background-color: $red
+				color: $accent
 //--------------- WC Product cart---------------
 .product
 	width: 100%
@@ -4316,9 +4322,18 @@
 .cart
 	display: flex
 	gap: 10px
+	position: relative
 
 	+r(480)
 		justify-content: center
+
+.nickx-slider-for
+
+	.slick-slide
+		height: 355px !important
+
+		img
+			height: 100%
 
 .slick-list.draggable
 	height: 350px !important
@@ -4330,6 +4345,7 @@
 	img
 		max-width: 100%
 		width: 100%
+		object-fit: cover
 
 	iframe#product_video_iframe
 		min-height: 350px !important
@@ -4582,7 +4598,13 @@
 	font-family: $pricefnt
 
 .added_to_cart
-	display: none !important
+	position: absolute
+	left: 0
+	top: 110%
+	background-color: $bgColor
+	color: $text
+	padding: 3px 5px
+	border-radius: 7px
 
 .woocommerce-notices-wrapper
 	position: absolute
@@ -4810,7 +4832,6 @@
 
 	.menu-profile-container
 		background-color: #fff
-		padding: 20px
 		border-radius: 10px
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.01), 0px 8px 8px rgba(0, 0, 0, 0.01), 0px 16px 16px rgba(0, 0, 0, 0.02), 0px 32px 32px rgba(0, 0, 0, 0.02)
 
@@ -4852,7 +4873,7 @@
 .tinv-wishlist
 	background-color: $accent
 	border-radius: 10px
-	box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2)
+	// box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2)
 	display: block !important
 
 	form
@@ -4906,8 +4927,6 @@
 	left: auto !important
 	right: 21px !important
 	padding: 0 !important
-	height: 36px
-	width: 36px
 
 .tinvwl_add_to_wishlist_button
 
@@ -4925,9 +4944,14 @@
 	display: flex !important
 	align-items: center !important
 	justify-content: center !important
+	border: 1px solid #eef0f5
 
 .tinvwl-product-make-remove
 	background-color: $bgColor !important
+	box-shadow: none
+	height: 35px !important
+	width: 35px !important
+	border-radius: 10px
 
 //------------Shopping cart quantity---
 .qty
@@ -4945,7 +4969,6 @@
 
 	+r(480)
 		font-size: 12px
-
 
 .wp-wrapper
 	min-height: calc(100vh-var(--footer-height))
@@ -4969,26 +4992,55 @@
 .col2-set
 	margin-bottom: 30px
 
-.shop_table
+.woocommerce-checkout-review-order
 
-	.product-name
+	.checkout_review
+		display: flex
+		flex-direction: column
+		gap: 15px
+		margin-bottom: 20px
+	
+	.checkout_subtotal
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+
+	.cart_item
+		padding: 5px 10px !important
+		border: 1px solid $bgColor
+		margin-bottom: 0
+
+	.checkout_product-name
 		text-align: center
-		padding: 0
-
-	.cart-item
 		padding: 0 !important
-
-	.product-name
-		text-align: center
-		padding: 0 !important
+		display: grid !important
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		grid-gap: 20px
+		max-width: 100%
+		align-items: center
 
 		a.remove
 			margin: 0 auto
-			margin-bottom: 10px
 			padding: 11px
 			color: transparent !important
+
+			+r(576)
+				width: 20px !important
+				height: 20px !important
 
 	.quantity
 		display: flex !important
 		justify-content: center
 		gap: 10px
+
+		+r(480)
+			flex-direction: column
+			gap: 0
+
+		.wbu-qty-button,.qty
+			
+			+r(576)
+				width: 20px !important
+				height: 20px !important
+				font-size: 15px
+				padding: 0 !important
