@@ -1102,6 +1102,7 @@
 		flex-wrap: nowrap
 		gap: 10px
 		width: 100%
+		position: relative
 
 		+r(576)
 			flex-direction: column
@@ -1123,6 +1124,11 @@
 
 			+r(480)
 				font-size: 24px
+
+		.added_to_cart
+			right: 0 !important
+			top: 28px !important
+			background-color: transparent !important
 
 	bdi
 		display: flex
@@ -5044,3 +5050,7 @@
 				height: 20px !important
 				font-size: 15px
 				padding: 0 !important
+
+			&:hover
+				color: $accent
+				text-decoration: none
